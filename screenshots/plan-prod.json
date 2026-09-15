@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Geekett /geekettapp — design plan",
+      "hasCanvas": false,
+      "bodyTextLen": 10421,
+      "bodyTextHash": "9f2fe629c6f2b8279aa8ce9e744f72a723c935ee19b80ef30f733bcfe036b832",
+      "bodyTextPrefix": "G Geekett DESIGN PLAN Design plan Live prototype 1. Brief 2. Aud",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/plan-prod.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Geekett /geekettapp — design plan",
+      "hasCanvas": false,
+      "bodyTextLen": 10234,
+      "bodyTextHash": "86adf41920eb04b7fcf73c93df3724f9cabe9679484878f790216012d4813bf9",
+      "bodyTextPrefix": "G Geekett DESIGN PLAN Design plan Live prototype GEEKETT · SEPTE",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/plan-prod-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/plan-prod.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

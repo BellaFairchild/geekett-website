@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Project Brief – Geekett",
+      "hasCanvas": false,
+      "bodyTextLen": 206,
+      "bodyTextHash": "b19b0a08f7fb8a0b63c63b53c13e5844c5688ef53c67965e8317da8df8c9a5b8",
+      "bodyTextPrefix": "Start a Project Brief Three quick steps — about 2 minutes. 1 Abo",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/brief-chars.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Project Brief – Geekett",
+      "hasCanvas": false,
+      "bodyTextLen": 206,
+      "bodyTextHash": "b19b0a08f7fb8a0b63c63b53c13e5844c5688ef53c67965e8317da8df8c9a5b8",
+      "bodyTextPrefix": "Start a Project Brief Three quick steps — about 2 minutes. 1 Abo",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/brief-chars-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/brief-chars.json"
+}

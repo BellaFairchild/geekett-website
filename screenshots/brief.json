@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/project-brief",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Project Brief – Geekett",
+      "hasCanvas": false,
+      "bodyTextLen": 488,
+      "bodyTextHash": "1560b6b45e7c1ef5352c055cae11d2b7a81500a10e11b3fdd13f0494402469d2",
+      "bodyTextPrefix": "G Geekett STUDIO Home App Studio App Lab Shop About Start a brie",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/brief.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Project Brief – Geekett",
+      "hasCanvas": false,
+      "bodyTextLen": 444,
+      "bodyTextHash": "f139ee583754cfd7bf8723590c8eb37d8811e2d5b37b5d35fc4fe7c002130622",
+      "bodyTextPrefix": "G Geekett STUDIO Menu Start a Project Brief Three quick steps — ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/brief-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/brief.json"
+}

@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/geekettapp",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Geekett App Studio — proposed /geekettapp",
+      "hasCanvas": false,
+      "bodyTextLen": 10727,
+      "bodyTextHash": "654ca1609425483119dcf5106de10f0a73b717c6dc96f5758ee32faf40c56f5f",
+      "bodyTextPrefix": "Proposed geekett.com/geekettapp · sibling to the WordPress cash-",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/prototype.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Geekett App Studio — proposed /geekettapp",
+      "hasCanvas": false,
+      "bodyTextLen": 10627,
+      "bodyTextHash": "81a9647f5da5292d0fa93517a5e28c33f023691212993aac119da4f6dde1cc83",
+      "bodyTextPrefix": "Proposed geekett.com/geekettapp Design plan Live prototype G Gee",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/prototype-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/prototype.json"
+}

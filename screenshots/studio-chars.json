@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/geekettapp",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Geekett App Studio — proposed /geekettapp",
+      "hasCanvas": false,
+      "bodyTextLen": 10724,
+      "bodyTextHash": "77f7ded6917e57a2e960764ae8aa91552d5bf7f257fcea9240df0fed369bb941",
+      "bodyTextPrefix": "Proposed geekett.com/geekettapp · sibling to the WordPress cash-",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/studio-chars.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Geekett App Studio — proposed /geekettapp",
+      "hasCanvas": false,
+      "bodyTextLen": 10624,
+      "bodyTextHash": "1f7452b4d02a195bb75ec90fce049a9d31d8f4691d91989e3f7cf8de4106b5db",
+      "bodyTextPrefix": "Proposed geekett.com/geekettapp Design plan /geekettapp G Geeket",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/studio-chars-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/studio-chars.json"
+}

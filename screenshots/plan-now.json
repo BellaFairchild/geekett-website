@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/plan",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Geekett /geekettapp — design plan",
+      "hasCanvas": false,
+      "bodyTextLen": 10418,
+      "bodyTextHash": "e5717b6f1a39255c0f85bb2335a54cb90186c21433dbea7231df5f3357f924fd",
+      "bodyTextPrefix": "G Geekett DESIGN PLAN Design plan /geekettapp 1. Brief 2. Audit ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/plan-now.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Geekett /geekettapp — design plan",
+      "hasCanvas": false,
+      "bodyTextLen": 10231,
+      "bodyTextHash": "0ca965e60c6e342e2de1b51143335cdd85693b6a3cf61f1554e75f30e8cb916b",
+      "bodyTextPrefix": "G Geekett DESIGN PLAN Design plan /geekettapp GEEKETT · SEPTEMBE",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/plan-now-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/plan-now.json"
+}

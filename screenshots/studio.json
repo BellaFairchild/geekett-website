@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/geekettapp",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Geekett App Studio — proposed /geekettapp",
+      "hasCanvas": false,
+      "bodyTextLen": 10568,
+      "bodyTextHash": "e92cd06c780ce37a399253896c14c6e90383daf47baf6ea5814f448371079532",
+      "bodyTextPrefix": "G Geekett STUDIO Home App Studio App Lab Shop About Start a brie",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/studio.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Geekett App Studio — proposed /geekettapp",
+      "hasCanvas": false,
+      "bodyTextLen": 10524,
+      "bodyTextHash": "79229565681a6ac4957beb4e1f911c3c8ba2fb15f054b8f6ff0795111788aab9",
+      "bodyTextPrefix": "G Geekett STUDIO Menu ONE-WOMAN STUDIO · POWERED WITH BUILDER BO",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/studio-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/studio.json"
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Geekett">
+  <rect width="32" height="32" rx="8" fill="#FFF6F9"/>
+  <path
+    fill="#0FB8B0"
+    fill-rule="evenodd"
+    d="M16 4.8A11.2 11.2 0 1 0 27.2 16 11.2 11.2 0 0 0 16 4.8Zm0 5.7A5.5 5.5 0 1 1 10.5 16 5.5 5.5 0 0 1 16 10.5ZM21.2 13.2H32v5.6H21.2Z"
+  />
+  <path fill="#E91B7A" d="M15 14.2h12v3.6h-2.4V20.6h-3.2v-2.8H15z"/>
+</svg>

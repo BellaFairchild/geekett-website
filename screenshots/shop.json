@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/shop",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Shop — Geekett digital products",
+      "hasCanvas": false,
+      "bodyTextLen": 1315,
+      "bodyTextHash": "6c49c2dce4d3dd7cc5dc5ef78f9a46a75e58f83e62cbabea654c962242f64b21",
+      "bodyTextPrefix": "G Geekett STUDIO Home App Studio App Lab Shop About Start a brie",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/shop.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Shop — Geekett digital products",
+      "hasCanvas": false,
+      "bodyTextLen": 1271,
+      "bodyTextHash": "400b64624fb544710b0608525fb4a011217f05abd3db8930e414a0cec4dd5b94",
+      "bodyTextPrefix": "G Geekett STUDIO Menu SHOP Digital products you can use today Th",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/shop-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/shop.json"
+}

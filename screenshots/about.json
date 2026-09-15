@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/about",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "About Geekett — Bella Fairchild & Builder Bot Bobby",
+      "hasCanvas": false,
+      "bodyTextLen": 1976,
+      "bodyTextHash": "a0b301850df4c81a0868f8377ed9a126e9ad0a654bb129b8d7aa0cd4d22e685a",
+      "bodyTextPrefix": "G Geekett STUDIO Home App Studio App Lab Shop About Start a brie",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/about.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "About Geekett — Bella Fairchild & Builder Bot Bobby",
+      "hasCanvas": false,
+      "bodyTextLen": 1932,
+      "bodyTextHash": "b209649c9291a901e72a46296c988e1375d40caf8abe82b8c9b2c9255feb22ae",
+      "bodyTextPrefix": "G Geekett STUDIO Menu ABOUT One woman. One builder bot. Real han",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/about-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/about.json"
+}
