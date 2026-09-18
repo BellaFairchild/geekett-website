@@ -132,7 +132,7 @@ export function PlanPage() {
 
           <Chapter id="brief" kicker="01 · Brief" title="What this page is for">
             <p>
-              Geekett is Bella Fairchild’s founder-led studio. The live homepage
+              Geekett is Bella’s founder-led studio. The live homepage
               is a focused cash plan: mobile-first WordPress sites, three fixed
               CAD packages, a written process, and a Project Brief. That page
               should stay exactly what it is.
@@ -452,7 +452,7 @@ export function PlanPage() {
               <p className="text-xs uppercase tracking-[0.14em] text-muted">Proposed hero</p>
               <p className="mt-2 font-display text-2xl font-semibold text-ink">{TAGLINE}</p>
               <p className="mt-2 text-sm leading-relaxed">
-                Geekett is Bella Fairchild’s App Studio — packages for AI apps,
+                Geekett is Bella’s App Studio — packages for AI apps,
                 mobile-first WordPress, and marketing systems, plus a shop of
                 grab-and-go tools. Clear packages. Real deliverables. No jargon fog.
               </p>

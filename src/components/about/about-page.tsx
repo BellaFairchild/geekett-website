@@ -24,17 +24,18 @@ export function AboutPage() {
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <div>
               <Eyebrow>About</Eyebrow>
-              <SectionTitle>One woman. One builder bot. Real handoff.</SectionTitle>
+              <SectionTitle>One Woman. One Builder Bot. Not A Foosball Table.</SectionTitle>
               <SectionIntro>
-                Geekett is Bella Fairchild’s one-woman studio. She builds
-                mobile-first WordPress sites, AI app packages, and marketing
-                systems for independent founders — with Builder Bot Bobby keeping
-                the checklists tidy.
+                Geekett is Bella’s one-woman studio. She builds
+                mobile-first websites, App Consulting plans, and AI Automation
+                Systems for independent founders — with Builder Bot Bobby keeping
+                the checklists tidy (and the scope out of a side quest).
               </SectionIntro>
               <p className="mt-5 max-w-xl text-[1.05rem] leading-relaxed text-ink-soft">
                 The work is async on purpose. You write a brief. Bella replies
                 within a business day. Shared docs and short screen recordings
-                replace a meeting marathon. {TAGLINE}
+                replace a meeting marathon. If your favorite vendor’s love
+                language is “circling back,” we are not that vendor. {TAGLINE}
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Button asChild>
@@ -50,8 +51,8 @@ export function AboutPage() {
         </Section>
 
         <Section alt>
-          <Eyebrow>How we work</Eyebrow>
-          <SectionTitle>Three beats, then you ship.</SectionTitle>
+          <Eyebrow>How We Work</Eyebrow>
+          <SectionTitle>Three Beats, Then You Ship.</SectionTitle>
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {beats.map((beat) => (
               <div
@@ -99,7 +100,7 @@ export function AboutPage() {
 
         <Section alt>
           <Eyebrow>FAQ</Eyebrow>
-          <SectionTitle>Straight answers</SectionTitle>
+          <SectionTitle>Straight Answers</SectionTitle>
           <div className="mt-8 divide-y divide-line overflow-hidden rounded-xl border border-line bg-cream">
             {faqs.map((item, i) => {
               const isOpen = openFaq === i;

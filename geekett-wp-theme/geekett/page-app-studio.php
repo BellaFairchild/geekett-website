@@ -65,7 +65,7 @@ $packs = [
       <div>
         <p class="gk-kicker">One-woman studio · Powered with Builder Bot Bobby</p>
         <h1 class="gk-h1">Smart apps. Bright ideas. Built with heart.</h1>
-        <p class="gk-intro">Geekett is Bella Fairchild’s App Studio — packages for AI apps, mobile-first WordPress, and marketing systems, plus a shop of grab-and-go tools. Clear packages. Real deliverables. No jargon fog.</p>
+        <p class="gk-intro">Geekett is Bella’s App Studio — packages for AI apps, mobile-first WordPress, and marketing systems, plus a shop of grab-and-go tools. Clear packages. Real deliverables. No jargon fog.</p>
         <div class="gk-actions">
           <a class="gk-btn gk-btn-lg" href="#packages">See packages</a>
           <a class="gk-btn gk-btn-lg gk-btn-ghost" href="<?php echo esc_url(geekett_page_url('shop')); ?>">Browse the shop</a>

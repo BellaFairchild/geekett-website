@@ -44,7 +44,7 @@ export function SiteHeader({ current }: { current?: string }) {
             ) : null}
           </Link>
           <Button size="sm" asChild>
-            <Link to="/project-brief">Start a brief</Link>
+            <Link to="/project-brief">Start A Brief</Link>
           </Button>
         </div>
         <button
@@ -84,7 +84,7 @@ export function SiteHeader({ current }: { current?: string }) {
             </Button>
             <Button className="flex-1" asChild>
               <Link to="/project-brief" onClick={() => setOpen(false)}>
-                Start a brief
+                Start A Brief
               </Link>
             </Button>
           </div>

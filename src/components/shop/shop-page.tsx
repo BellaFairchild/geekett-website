@@ -56,7 +56,7 @@ export function ShopPage() {
       <main>
         <Section>
           <Eyebrow>Shop</Eyebrow>
-          <SectionTitle>Digital products you can use today</SectionTitle>
+          <SectionTitle>Digital Products You Can Use Today</SectionTitle>
           <SectionIntro>
             Three SKUs, not a catalogue. Instant access when you’re not ready for
             a full package — or you want a head start before the brief.
@@ -115,7 +115,7 @@ export function ShopPage() {
         </Section>
 
         <Section id="bag" alt>
-          <Eyebrow>Your bag</Eyebrow>
+          <Eyebrow>Your Bag</Eyebrow>
           <SectionTitle>Checkout</SectionTitle>
           {paid ? (
             <p

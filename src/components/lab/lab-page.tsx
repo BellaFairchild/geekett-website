@@ -32,7 +32,7 @@ export function LabPage() {
           <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
               <Eyebrow>App Lab</Eyebrow>
-              <SectionTitle>Ideas cooking in the Geekett lab</SectionTitle>
+              <SectionTitle>Ideas Cooking In The Geekett Lab</SectionTitle>
               <SectionIntro>
                 An honest look at products and concepts Bella is building — proof
                 the studio ships friendly tech, not just plans. Eight ventures

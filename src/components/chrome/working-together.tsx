@@ -1,7 +1,7 @@
 export function WorkingTogether({ className }: { className?: string }) {
   return (
     <div className={className}>
-      <div className="overflow-hidden rounded-2xl shadow-soft transition-transform duration-300 ease-out hover:-translate-y-1 hover:shadow-lift">
+      <div className="overflow-hidden rounded-[1.75rem] shadow-soft transition-transform duration-300 ease-out hover:-translate-y-1 hover:shadow-lift">
         <video
           className="block w-full origin-center transition-transform duration-500 ease-out hover:scale-[1.03]"
           autoPlay
@@ -14,8 +14,8 @@ export function WorkingTogether({ className }: { className?: string }) {
           <source src="/characters/working-together.mp4" type="video/mp4" />
         </video>
       </div>
-      <p className="mt-3 text-center text-sm text-muted">
-        Bella builds. Bobby assists. You launch.
+      <p className="mt-3 text-center text-sm font-bold text-ink">
+        Bella Builds. Bobby Assists. You Launch.
       </p>
     </div>
   );

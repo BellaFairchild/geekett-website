@@ -7,9 +7,9 @@ import { cn } from "@/lib/utils";
 import { Textarea } from "@/components/ui/textarea";
 
 const STEPS = [
-  { id: 0, label: "About you" },
-  { id: 1, label: "Your project" },
-  { id: 2, label: "Timing & send" },
+  { id: 0, label: "About You" },
+  { id: 1, label: "Your Project" },
+  { id: 2, label: "Timing & Send" },
 ] as const;
 
 type Fields = {
@@ -192,7 +192,7 @@ export function BriefPage() {
       <SiteHeader current="/project-brief" />
       <main className="mx-auto w-full max-w-[560px] px-4 pb-10 pt-8 sm:pt-10">
         <h1 className="text-center font-display text-[1.65rem] font-semibold leading-tight sm:text-[1.85rem]">
-          Start a Project Brief
+          Start A Project Brief
         </h1>
         <p className="mx-auto mt-2 max-w-md text-center text-[0.98rem] leading-relaxed text-brief-muted">
           Three quick steps — about 2 minutes.
@@ -216,7 +216,7 @@ export function BriefPage() {
               <Check className="size-6" />
             </span>
             <h2 className="mt-4 font-display text-xl font-semibold">
-              Brief received
+              Brief Received
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-brief-muted">
               Bella will reply within one business day with fit, next step, and

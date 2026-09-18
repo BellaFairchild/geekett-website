@@ -5,11 +5,11 @@ export const Route = createFileRoute("/about")({
   component: About,
   head: () => ({
     meta: [
-      { title: "About Geekett — Bella Fairchild & Builder Bot Bobby" },
+      { title: "About Geekett — Bella & Builder Bot Bobby" },
       {
         name: "description",
         content:
-          "Geekett is Bella Fairchild’s one-woman studio. One builder bot. Written process. Real handoff.",
+          "Geekett is Bella’s one-woman studio + Builder Bot Bobby. Written process. Real handoff. Slightly allergic to boring.",
       },
     ],
   }),

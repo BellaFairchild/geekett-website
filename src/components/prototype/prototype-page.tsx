@@ -4,17 +4,13 @@ import {
   ArrowRight,
   Bot,
   Check,
-  Globe,
   Mail,
-  Map,
-  Rocket,
-  ShoppingBag,
-  Smartphone,
-  Sparkles,
 } from "lucide-react";
 import { SiteFooter } from "@/components/chrome/site-footer";
 import { SiteHeader } from "@/components/chrome/site-header";
 import { WorkingTogether } from "@/components/chrome/working-together";
+import { BrandTagline } from "@/components/brand";
+import { RenderedIcon, type IconName } from "@/components/icons/rendered-icon";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -27,28 +23,45 @@ import {
 import {
   beats,
   faqs,
-  labProjects,
   packages,
   paths,
   proofCards,
-  shopItems,
+  mvpBlueprint,
   STUDIO_EMAIL,
-  TAGLINE,
 } from "@/lib/geekett/content";
 import { cn } from "@/lib/utils";
 
-const pathIcons = {
-  smartphone: Smartphone,
-  globe: Globe,
-  sparkles: Sparkles,
-  bag: ShoppingBag,
-} as const;
-
-const shopIcons = {
-  rocket: Rocket,
-  map: Map,
-  bot: Bot,
-} as const;
+const studioPaths = paths.filter(
+  (path) => path.id === "ai-apps" || path.id === "marketing",
+);
+const studioPackages = packages.filter(
+  (pack) => pack.id === "ai-apps" || pack.id === "marketing",
+);
+const studioFaqs = faqs
+  .filter((item) =>
+    [
+      "Do I need to know how to code?",
+      "Who’s Builder Bot Bobby?",
+      "How long do packages take?",
+      "Will you fully build my app?",
+    ].includes(item.q),
+  )
+  .map((item) =>
+    item.q === "Do I need to know how to code?"
+      ? {
+          ...item,
+          a: "No. Geekett is built for beginners and non-technical founders. You’ll get plain-language app plans and automation systems you can run without writing code — unless you want to learn, in which case Bobby will cheer from the sidelines.",
+        }
+      : item.q === "How long do packages take?"
+        ? {
+            ...item,
+            a: "Most packages land in about 2–6 weeks depending on scope and how quickly content comes back. Bella confirms timeline in writing before we start.",
+          }
+        : item,
+  );
+const studioProof = proofCards.filter(
+  (card) => card.title !== "The Cash-Plan WordPress Home",
+);
 
 function mailTo(subject: string) {
   return `mailto:${STUDIO_EMAIL}?subject=${encodeURIComponent(subject)}`;
@@ -57,6 +70,7 @@ function mailTo(subject: string) {
 export function PrototypePage() {
   const [joined, setJoined] = useState(false);
   const [briefed, setBriefed] = useState(false);
+  const [blueprintSent, setBlueprintSent] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   function onJoin(e: FormEvent<HTMLFormElement>) {
@@ -98,6 +112,27 @@ export function PrototypePage() {
     setBriefed(true);
   }
 
+  function onBlueprint(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const record = {
+      name: String(data.get("name") || ""),
+      email: String(data.get("email") || ""),
+      idea: String(data.get("idea") || ""),
+      at: new Date().toISOString(),
+    };
+    try {
+      const prev = JSON.parse(localStorage.getItem("geekett-mvp-blueprint") || "[]");
+      localStorage.setItem(
+        "geekett-mvp-blueprint",
+        JSON.stringify([...prev, record]),
+      );
+    } catch {
+      /* demo only */
+    }
+    setBlueprintSent(true);
+  }
+
   return (
     <div className="min-h-screen overflow-x-clip bg-paper text-ink">
       <SiteHeader current="/geekettapp" />
@@ -109,24 +144,27 @@ export function PrototypePage() {
               <p className="mb-4 font-display text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-bobby">
                 One-woman studio · Powered with Builder Bot Bobby
               </p>
-              <h1 className="text-[2.35rem] font-semibold leading-[1.08] text-ink sm:text-[3.15rem] lg:text-[3.4rem]">
-                {TAGLINE}
+              <h1 className="text-[2.15rem] font-semibold leading-[1.08] text-ink sm:text-[3.05rem] lg:text-[3.25rem]">
+                Your Business Is Running On Sticky Notes And A Prayer.
               </h1>
+              <p className="mt-4 max-w-xl font-display text-[1.15rem] font-semibold leading-snug text-heart sm:text-[1.25rem]">
+                Let’s Give It A Plan, A System, And A Sidekick That Actually Ship.
+              </p>
               <p className="mt-5 max-w-xl text-[1.08rem] leading-relaxed text-ink-soft">
-                Geekett is Bella Fairchild’s App Studio — packages for AI apps,
-                mobile-first WordPress, and marketing systems, plus a shop of
-                grab-and-go tools. Clear packages. Real deliverables. No jargon fog.
+                Geekett is Bella’s App Studio — App Consulting and AI
+                Automation Systems. Clear packages. Real deliverables. No jargon
+                fog. No foosball table.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Button size="lg" asChild>
                   <a href="#packages">See packages</a>
                 </Button>
                 <Button size="lg" variant="ghost" asChild>
-                  <a href="#shop">Browse the shop</a>
+                  <a href="#contact">Contact Bella</a>
                 </Button>
               </div>
               <ul className="mt-8 flex flex-wrap gap-2">
-                {["100% solo-built", "Strategy to launch", "Beginner-friendly"].map(
+                {["100% solo-built", "Written process", "Beginner-friendly"].map(
                   (item) => (
                     <li
                       key={item}
@@ -138,6 +176,7 @@ export function PrototypePage() {
                   ),
                 )}
               </ul>
+              <BrandTagline className="mt-7" />
             </div>
             <WorkingTogether />
           </div>
@@ -145,25 +184,22 @@ export function PrototypePage() {
 
         <Section id="packages" alt>
           <Eyebrow>Packages</Eyebrow>
-          <SectionTitle>Four ways to build with Geekett</SectionTitle>
+          <SectionTitle>Two Ways To Build With Geekett</SectionTitle>
           <SectionIntro>
-            Whether you need a full package or a ready-made digital product, pick
-            the path that matches where you are — idea stage, need-a-website
-            stage, or “please just give me the system” stage.
+            App consulting or an automation system. Pick the path that matches
+            the mess on your desk — idea stage, or “please just give me the
+            system” stage.
           </SectionIntro>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            {paths.map((path) => {
-              const Icon = pathIcons[path.icon];
+          <div className="mt-10 grid gap-4 sm:grid-cols-2">
+            {studioPaths.map((path, i) => {
               return (
                 <a
                   key={path.id}
                   href={path.href}
-                  className="group flex flex-col rounded-xl border border-line bg-cream p-5 shadow-lift transition-transform duration-150 hover:-translate-y-0.5"
+                  className="group flex flex-col items-center rounded-xl border border-line bg-cream p-5 text-center shadow-lift transition-transform duration-150 hover:-translate-y-0.5"
                 >
-                  <span className="flex size-11 items-center justify-center rounded-md bg-sand text-ink">
-                    <Icon className="size-5" />
-                  </span>
-                  <p className="mt-5 font-display text-[0.68rem] uppercase tracking-[0.16em] text-muted">
+                  <RenderedIcon name={path.mark as IconName} delay={(i % 4) as 0 | 1 | 2 | 3} />
+                  <p className="mt-4 font-display text-[0.68rem] uppercase tracking-[0.16em] text-muted">
                     {path.kicker}
                   </p>
                   <h3 className="mt-1 font-display text-lg font-semibold leading-snug">
@@ -182,23 +218,117 @@ export function PrototypePage() {
           </div>
         </Section>
 
+        <Section id="mvp-blueprint">
+          <div className="mx-auto max-w-2xl text-center">
+            <div className="flex justify-center">
+              <RenderedIcon name="blueprint" size="lg" />
+            </div>
+            <Eyebrow className="mt-4">{mvpBlueprint.kicker}</Eyebrow>
+            <SectionTitle className="mx-auto text-center">
+              {mvpBlueprint.headline}
+            </SectionTitle>
+            <SectionIntro className="mx-auto text-center">
+              {mvpBlueprint.body}
+            </SectionIntro>
+          </div>
+
+          {blueprintSent ? (
+            <p
+              className="mx-auto mt-8 max-w-xl rounded-xl border border-line bg-cream p-6 text-center text-sm leading-relaxed"
+              role="status"
+            >
+              Idea received. Bella will send your App MVP Blueprint in writing
+              in 2–3 business days. Prefer email?{" "}
+              <a
+                className="font-medium text-heart underline"
+                href={mailTo("App MVP Blueprint")}
+              >
+                {STUDIO_EMAIL}
+              </a>
+            </p>
+          ) : (
+            <form
+              onSubmit={onBlueprint}
+              className="mx-auto mt-8 max-w-xl space-y-4 rounded-2xl border border-line bg-cream p-6"
+            >
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label
+                    className="mb-1.5 block text-xs font-medium text-ink-soft"
+                    htmlFor="mvp-name"
+                  >
+                    Name
+                  </label>
+                  <Input
+                    id="mvp-name"
+                    name="name"
+                    required
+                    placeholder="First name"
+                    autoComplete="name"
+                  />
+                </div>
+                <div>
+                  <label
+                    className="mb-1.5 block text-xs font-medium text-ink-soft"
+                    htmlFor="mvp-email"
+                  >
+                    Email
+                  </label>
+                  <Input
+                    id="mvp-email"
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="you@studio.com"
+                    autoComplete="email"
+                  />
+                </div>
+              </div>
+              <div>
+                <label
+                  className="mb-1.5 block text-xs font-medium text-ink-soft"
+                  htmlFor="mvp-idea"
+                >
+                  Your app idea
+                </label>
+                <textarea
+                  id="mvp-idea"
+                  name="idea"
+                  required
+                  rows={4}
+                  className="w-full rounded-sm border border-line bg-paper px-3.5 py-3 text-sm text-ink placeholder:text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bobby/40"
+                  placeholder="Who it’s for, what it helps them do, and anything you’ve already tried."
+                />
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <Button type="submit">{mvpBlueprint.cta}</Button>
+                <p className="text-center text-xs text-muted">{mvpBlueprint.note}</p>
+              </div>
+            </form>
+          )}
+        </Section>
+
         <Section id="deep-dives">
-          <Eyebrow>Deep dives</Eyebrow>
-          <SectionTitle>What’s inside each path</SectionTitle>
+          <Eyebrow>Deep Dives</Eyebrow>
+          <SectionTitle>What’s Inside Each Path</SectionTitle>
           <SectionIntro>
             Every package is scoped for clarity: who it’s for, what’s included,
-            how we work, and a transparent starting price. WordPress prices are
-            live. App and marketing prices are the recommended starting lines.
+            how we work, and a transparent starting price. App consulting and
+            automation prices are the recommended starting lines — confirm
+            before we start.
           </SectionIntro>
 
           <div className="mt-12 space-y-8">
-            {packages.map((pack) => (
+            {studioPackages.map((pack) => (
               <article
                 key={pack.id}
                 id={pack.id}
-                className="rounded-2xl border border-line bg-cream p-6 shadow-soft sm:p-8"
+                className="group rounded-2xl border border-line bg-cream p-6 shadow-soft sm:p-8"
               >
-                <div className="flex flex-wrap items-start justify-between gap-4">
+                <div className="flex justify-center">
+                  <RenderedIcon name={pack.mark} />
+                </div>
+                <div className="mt-4 flex flex-wrap items-start justify-between gap-4">
                   <div>
                     <h3 className="font-display text-2xl font-semibold">
                       {pack.title}
@@ -212,39 +342,17 @@ export function PrototypePage() {
                     <p className="font-display text-xl font-semibold tabular-nums">
                       {pack.price}
                     </p>
-                    <Badge
-                      variant={pack.priceStatus === "live" ? "live" : "plan"}
-                      className="mt-1"
-                    >
-                      {pack.priceStatus === "live" ? "Live" : "Proposed"}
+                    <Badge variant="plan" className="mt-1">
+                      Proposed
                     </Badge>
                   </div>
                 </div>
                 <p className="mt-2 text-xs text-muted">{pack.priceNote}</p>
 
-                {"liveTiers" in pack && pack.liveTiers ? (
-                  <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                    {pack.liveTiers.map((tier) => (
-                      <div
-                        key={tier.name}
-                        className="rounded-lg border border-line bg-paper p-4"
-                      >
-                        <p className="font-display text-sm font-semibold">
-                          {tier.name}
-                        </p>
-                        <p className="mt-0.5 font-display text-lg tabular-nums">
-                          {tier.price} CAD
-                        </p>
-                        <p className="mt-2 text-sm text-ink-soft">{tier.line}</p>
-                      </div>
-                    ))}
-                  </div>
-                ) : null}
-
                 <div className="mt-6 grid gap-5 md:grid-cols-2">
                   <div className="rounded-lg bg-paper p-4">
                     <h4 className="font-display text-sm font-semibold">
-                      Who it’s for
+                      Who It’s For
                     </h4>
                     <p className="mt-2 text-sm leading-relaxed text-ink-soft">
                       {pack.who}
@@ -252,7 +360,7 @@ export function PrototypePage() {
                   </div>
                   <div className="rounded-lg bg-paper p-4">
                     <h4 className="font-display text-sm font-semibold">
-                      What’s included
+                      What’s Included
                     </h4>
                     <ul className="mt-2 space-y-1.5 text-sm text-ink-soft">
                       {pack.includes.map((item) => (
@@ -265,7 +373,7 @@ export function PrototypePage() {
                   </div>
                   <div className="rounded-lg bg-paper p-4">
                     <h4 className="font-display text-sm font-semibold">
-                      How it works
+                      How It Works
                     </h4>
                     <p className="mt-2 text-sm leading-relaxed text-ink-soft">
                       {pack.how}
@@ -290,8 +398,8 @@ export function PrototypePage() {
                   <Button asChild>
                     <a
                       href={
-                        pack.id === "wordpress"
-                          ? "/project-brief"
+                        pack.id === "marketing"
+                          ? "/automation"
                           : mailTo(pack.mailSubject)
                       }
                     >
@@ -308,10 +416,10 @@ export function PrototypePage() {
         </Section>
 
         <Section id="about" alt>
-          <Eyebrow>How we work</Eyebrow>
-          <SectionTitle>One woman. One builder bot. Real results.</SectionTitle>
+          <Eyebrow>How We Work</Eyebrow>
+          <SectionTitle>One Woman. One Builder Bot. Real Results.</SectionTitle>
           <SectionIntro>
-            Geekett is Bella Fairchild’s one-woman studio. Builder Bot Bobby
+            Geekett is Bella’s one-woman studio. Builder Bot Bobby
             assists with research, checklists, and keeping builds tidy — so you
             get personalized attention with extra robot horsepower.
           </SectionIntro>
@@ -356,7 +464,9 @@ export function PrototypePage() {
                   {beat.title}
                 </h4>
                 <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                  {beat.body}
+                  {beat.n === "1"
+                    ? "Idea stage or “please just give me the system” — tell Bella in plain words. A written brief. No intro call required."
+                    : beat.body}
                 </p>
               </div>
             ))}
@@ -375,103 +485,16 @@ export function PrototypePage() {
           </div>
         </Section>
 
-        <Section id="applab">
-          <Eyebrow>App Lab</Eyebrow>
-          <SectionTitle>Ideas cooking in the Geekett lab</SectionTitle>
-          <SectionIntro>
-            A honest look at products and concepts Bella is building — proof
-            that the studio ships friendly tech, not just plans. Eight ventures
-            from the September 2026 briefs, with real status — not a fake
-            portfolio.
-          </SectionIntro>
-          <div className="mt-8 flex justify-center">
-            <img
-              src="/characters/geekett-desk.webp"
-              alt="Geekett at her desk with Android, Apple, React, WordPress, and app-studio orbs"
-              width={750}
-              height={772}
-              className="h-auto w-full max-h-[360px] object-contain sm:max-h-[420px]"
-            />
-          </div>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            {labProjects.map((project) => (
-              <article
-                key={project.name}
-                className="flex flex-col rounded-xl border border-line bg-cream p-5"
-              >
-                <div className="flex items-start justify-between gap-2">
-                  <h3 className="font-display text-lg font-semibold">
-                    {project.name}
-                  </h3>
-                  <Badge variant={project.status === "In build" ? "bobby" : "paper"}>
-                    {project.status}
-                  </Badge>
-                </div>
-                <p className="mt-1 text-[0.7rem] uppercase tracking-[0.14em] text-muted">
-                  {project.type}
-                </p>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">
-                  {project.blurb}
-                </p>
-                <p className="mt-4 border-t border-line pt-3 text-xs text-muted">
-                  Next: {project.priority}
-                </p>
-              </article>
-            ))}
-          </div>
-        </Section>
-
-        <Section id="shop" alt>
-          <Eyebrow>Shop</Eyebrow>
-          <SectionTitle>Digital products you can use today</SectionTitle>
-          <SectionIntro>
-            A starter shop — three SKUs, not a catalogue. Instant access when
-            you’re not ready for a full package, or you want a head start.
-          </SectionIntro>
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
-            {shopItems.map((item) => {
-              const Icon = shopIcons[item.icon];
-              return (
-                <article
-                  key={item.id}
-                  className="flex flex-col rounded-xl border border-line bg-cream p-6"
-                >
-                  <span className="flex size-11 items-center justify-center rounded-md bg-sand text-ink">
-                    <Icon className="size-5" />
-                  </span>
-                  <Badge variant="paper" className="mt-4 w-fit">
-                    {item.category}
-                  </Badge>
-                  <h3 className="mt-3 font-display text-xl font-semibold">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-soft">
-                    {item.blurb}
-                  </p>
-                  <div className="mt-5 flex items-center justify-between">
-                    <p className="font-display text-lg font-semibold tabular-nums">
-                      {item.priceLabel}
-                    </p>
-                    <Button size="sm" variant="ink" asChild>
-                      <a href={mailTo(`Shop: ${item.title}`)}>Request</a>
-                    </Button>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-        </Section>
-
         <Section id="love">
-          <Eyebrow>Studio proof</Eyebrow>
-          <SectionTitle>Show the work. Don’t invent the love.</SectionTitle>
+          <Eyebrow>Studio Proof</Eyebrow>
+          <SectionTitle>Show The Work. Don’t Invent The Love.</SectionTitle>
           <SectionIntro>
             The reference mock used placeholder quotes. This plan replaces a
             wall of love with proof the studio can actually stand behind until
             three documented client examples exist.
           </SectionIntro>
           <div className="mt-10 grid gap-4 md:grid-cols-3">
-            {proofCards.map((card) => (
+            {studioProof.map((card) => (
               <article
                 key={card.title}
                 className="rounded-xl border border-line bg-cream p-6"
@@ -491,9 +514,9 @@ export function PrototypePage() {
         <Section id="faq" alt>
           <div className="mx-auto max-w-3xl">
             <Eyebrow>FAQ</Eyebrow>
-            <SectionTitle>Questions, answered clearly</SectionTitle>
+            <SectionTitle>Questions, Answered Clearly</SectionTitle>
             <div className="mt-8 divide-y divide-line rounded-xl border border-line bg-cream">
-              {faqs.map((item, i) => {
+              {studioFaqs.map((item, i) => {
                 const isOpen = openFaq === i;
                 return (
                   <div key={item.q}>
@@ -528,27 +551,35 @@ export function PrototypePage() {
         </Section>
 
         <Section id="build-list">
-          <div className="overflow-hidden rounded-2xl border border-line bg-ink px-6 py-10 text-cream sm:px-10">
-            <p className="font-display text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-heart-fg/70">
-              Build List
-            </p>
-            <h2 className="mt-3 max-w-xl font-display text-3xl font-semibold leading-tight">
+          <div className="gk-build-list rounded-[2.25rem] px-6 py-12 text-center sm:rounded-[2.75rem] sm:px-12 sm:py-16 lg:px-20 lg:py-[4.5rem]">
+            <span
+              className="mx-auto grid size-14 place-items-center rounded-full bg-cream text-heart shadow-[0_8px_24px_-8px_rgb(20_34_42_/_0.25)]"
+              aria-hidden="true"
+            >
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="currentColor">
+                <path d="M14 3.2 16.1 11H24l-6.4 4.6L19.8 24 14 19.2 8.2 24l2.2-8.4L4 11h7.9L14 3.2Z" />
+                <circle cx="21.5" cy="6.5" r="1.6" />
+              </svg>
+            </span>
+            <h2 className="mt-6 font-display text-[1.85rem] font-extrabold leading-[1.15] tracking-tight text-ink sm:text-[2.45rem]">
               Join the Geekett Build List
             </h2>
-            <p className="mt-3 max-w-xl text-[1.02rem] leading-relaxed text-cream/75">
-              Build notes, product drops, and friendly updates from Bella (and
-              occasional wisdom from Builder Bot Bobby). No spam — just useful
-              shipping energy.
+            <p className="mx-auto mt-4 max-w-xl text-[1.05rem] leading-relaxed text-ink">
+              Get behind-the-scenes app builds, AI tool ideas, and
+              beginner-friendly tech tips.
             </p>
             {joined ? (
-              <p className="mt-6 max-w-xl rounded-md bg-cream/10 px-4 py-3 text-sm" role="status">
-                You’re on the demo list. In production this feeds the welcome
-                sequence from the Geekett business brief.
+              <p
+                className="mx-auto mt-8 max-w-md rounded-2xl bg-cream px-5 py-4 text-sm font-medium text-ink"
+                role="status"
+              >
+                You’re on the list. Watch your inbox for friendly shipping energy
+                — no spam.
               </p>
             ) : (
               <form
                 onSubmit={onJoin}
-                className="mt-6 flex max-w-xl flex-col gap-3 sm:flex-row"
+                className="mx-auto mt-8 flex w-full max-w-md flex-col gap-4"
               >
                 <label className="sr-only" htmlFor="bl-name">
                   First name
@@ -556,24 +587,30 @@ export function PrototypePage() {
                 <Input
                   id="bl-name"
                   name="first_name"
-                  placeholder="First name"
+                  placeholder="First Name"
                   required
-                  className="bg-cream text-ink"
+                  autoComplete="given-name"
+                  className="h-14 rounded-full border-0 bg-cream px-6 text-base shadow-none placeholder:text-muted focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-cream/80"
                 />
                 <label className="sr-only" htmlFor="bl-email">
-                  Email
+                  Email address
                 </label>
                 <Input
                   id="bl-email"
                   name="email"
                   type="email"
-                  placeholder="Email"
+                  placeholder="Email Address"
                   required
-                  className="bg-cream text-ink"
+                  autoComplete="email"
+                  className="h-14 rounded-full border-0 bg-cream px-6 text-base shadow-none placeholder:text-muted focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-cream/80"
                 />
-                <Button type="submit" variant="primary" className="shrink-0">
-                  Join the list
-                </Button>
+                <button
+                  type="submit"
+                  className="hover-pop inline-flex h-14 w-full items-center justify-center rounded-full bg-ink text-base font-semibold text-cream transition-transform duration-150"
+                >
+                  Join the List
+                </button>
+                <p className="text-sm text-ink/70">No spam. Unsubscribe anytime.</p>
               </form>
             )}
           </div>
@@ -582,11 +619,10 @@ export function PrototypePage() {
         <Section id="contact">
           <div className="mx-auto max-w-2xl">
             <Eyebrow>Studio Brief</Eyebrow>
-            <SectionTitle>Ready to pick your path?</SectionTitle>
+            <SectionTitle>Ready To Pick Your Path?</SectionTitle>
             <SectionIntro>
-              Tell Bella what you’re building — an app idea, a WordPress site, a
-              marketing system, or a shop question. Canadian studio energy,
-              clear next steps.
+              Tell Bella what you’re building — an app idea or an automation
+              system. Canadian studio energy, clear next steps.
             </SectionIntro>
 
             {briefed ? (
@@ -595,8 +631,7 @@ export function PrototypePage() {
                 role="status"
               >
                 Brief saved on this device. In production this would email Bella
-                and land in the same written-process queue as the WordPress
-                Project Brief. Prefer email?{" "}
+                and land in the written-process queue. Prefer email?{" "}
                 <a className="font-medium text-heart underline" href={mailTo("Studio Brief")}>
                   {STUDIO_EMAIL}
                 </a>
@@ -624,10 +659,8 @@ export function PrototypePage() {
                   <p className="mb-2 text-xs font-medium text-ink-soft">Path</p>
                   <div className="grid gap-2 sm:grid-cols-2">
                     {[
-                      "AI App Package",
-                      "WordPress site",
-                      "AI Marketing System",
-                      "Shop / not sure yet",
+                      "App Consulting",
+                      "AI Automation System",
                     ].map((label) => (
                       <label
                         key={label}

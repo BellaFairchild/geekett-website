@@ -21,7 +21,7 @@
     </div>
   </div>
   <div class="gk-footer-copy">
-    <p class="gk-wrap">© <?php echo esc_html(gmdate('Y')); ?> Geekett · Bella Fairchild · Canadian studio</p>
+    <p class="gk-wrap">© <?php echo esc_html(gmdate('Y')); ?> Geekett · Bella · Canadian studio</p>
   </div>
 </footer>
 <?php wp_footer(); ?>

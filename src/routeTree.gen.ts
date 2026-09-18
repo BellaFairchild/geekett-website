@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AutomationRouteImport } from './routes/automation'
 import { Route as GeekettappRouteImport } from './routes/geekettapp'
 import { Route as LabRouteImport } from './routes/lab'
 import { Route as PlanRouteImport } from './routes/plan'
@@ -25,6 +26,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AutomationRoute = AutomationRouteImport.update({
+  id: '/automation',
+  path: '/automation',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GeekettappRoute = GeekettappRouteImport.update({
@@ -56,6 +62,7 @@ const ShopRoute = ShopRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/automation': typeof AutomationRoute
   '/geekettapp': typeof GeekettappRoute
   '/lab': typeof LabRoute
   '/plan': typeof PlanRoute
@@ -65,6 +72,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/automation': typeof AutomationRoute
   '/geekettapp': typeof GeekettappRoute
   '/lab': typeof LabRoute
   '/plan': typeof PlanRoute
@@ -75,6 +83,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/automation': typeof AutomationRoute
   '/geekettapp': typeof GeekettappRoute
   '/lab': typeof LabRoute
   '/plan': typeof PlanRoute
@@ -86,6 +95,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/automation'
     | '/geekettapp'
     | '/lab'
     | '/plan'
@@ -95,6 +105,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/automation'
     | '/geekettapp'
     | '/lab'
     | '/plan'
@@ -104,6 +115,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/automation'
     | '/geekettapp'
     | '/lab'
     | '/plan'
@@ -114,6 +126,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AutomationRoute: typeof AutomationRoute
   GeekettappRoute: typeof GeekettappRoute
   LabRoute: typeof LabRoute
   PlanRoute: typeof PlanRoute
@@ -135,6 +148,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/automation': {
+      id: '/automation'
+      path: '/automation'
+      fullPath: '/automation'
+      preLoaderRoute: typeof AutomationRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/geekettapp': {
@@ -178,6 +198,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AutomationRoute: AutomationRoute,
   GeekettappRoute: GeekettappRoute,
   LabRoute: LabRoute,
   PlanRoute: PlanRoute,

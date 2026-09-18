@@ -19,6 +19,7 @@
   --color-bobby-mist: #d5f6f3;
   --color-sand: #ffe4ef;
   --color-ok: #0a8a86;
+  --color-idea: #3f2ad1;
 
   --color-brief: var(--color-heart);
   --color-brief-deep: var(--color-heart-deep);
@@ -103,6 +104,54 @@
 
     .hover-pop:hover {
       transform: translateY(-2px) scale(1.04);
+    }
+  }
+
+  .gk-build-list {
+    background: linear-gradient(135deg, #12c4bb 0%, var(--color-bobby) 42%, #3ecde0 100%);
+  }
+
+  .icon-3d {
+    display: inline-grid;
+    place-items: center;
+    perspective: 720px;
+  }
+
+  .icon-3d img {
+    transform-style: preserve-3d;
+    transform-origin: 50% 70%;
+    animation: icon-float 4.4s ease-in-out infinite;
+    transition:
+      transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter 280ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .icon-3d-d1 img {
+    animation-delay: 0.35s;
+  }
+  .icon-3d-d2 img {
+    animation-delay: 0.7s;
+  }
+  .icon-3d-d3 img {
+    animation-delay: 1.05s;
+  }
+
+  @media (hover: hover) {
+    .icon-3d:hover img,
+    .group:hover .icon-3d img {
+      animation-play-state: paused;
+      transform: translateY(-10px) rotateX(14deg) rotateY(-18deg) scale(1.08);
+      filter: drop-shadow(0 18px 20px rgb(15 184 176 / 0.28));
+    }
+  }
+
+  @keyframes icon-float {
+    0%,
+    100% {
+      transform: translateY(0) rotateY(-5deg);
+    }
+    50% {
+      transform: translateY(-8px) rotateY(6deg);
     }
   }
 }

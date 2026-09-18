@@ -36,7 +36,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-cream/10">
         <p className="mx-auto max-w-6xl px-5 py-4 text-xs text-cream/50 sm:px-8">
-          © {new Date().getFullYear()} Geekett · Bella Fairchild · Canadian
+          © {new Date().getFullYear()} Geekett · Bella · Canadian
           studio
         </p>
       </div>

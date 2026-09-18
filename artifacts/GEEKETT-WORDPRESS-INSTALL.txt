@@ -1,0 +1,54 @@
+GEEKETT WORDPRESS THEME — install in 10 minutes
+================================================
+
+This is a custom theme of the Geekett.com design (pink + teal, Bobby, brief form).
+It is NOT a plugin. Upload it like any other theme.
+
+WHAT YOU NEED
+-------------
+A WordPress site you control:
+
+  • Self-hosted WordPress (SiteGround, WP Engine, Hostinger, Bluehost, etc.)
+  • OR WordPress.com Business / Commerce (custom themes are not allowed on free/Personal/Premium)
+
+You cannot paste this into the free wordpress.com editor or into Elementor as-is.
+
+INSTALL
+-------
+1. In WordPress admin go to Appearance → Themes → Add New → Upload Theme.
+2. Choose geekett-wordpress-theme.zip and click Install Now, then Activate.
+3. On first activate the theme creates these pages and sets Home as the front page:
+      Home            /
+      App Studio      /geekettapp/
+      App Lab         /lab/
+      Shop            /shop/
+      About           /about/
+      Project Brief   /project-brief/
+
+4. If Home is not showing, go to Settings → Reading:
+      • “A static page”
+      • Homepage: Home
+
+5. Settings → Permalinks → Post name → Save. (so /project-brief/ works)
+
+EMAIL (briefs + shop requests)
+------------------------------
+The Project Brief and shop “Request this” forms email bella@geekett.com using
+WordPress’s built-in mail. Many hosts block that.
+
+If briefs never arrive, install a free SMTP plugin (WP Mail SMTP or FluentSMTP)
+and connect Gmail or your host email. Then test the brief once.
+
+SHOP
+----
+Shop items currently send Bella a request email (not instant Stripe checkout).
+When you want paid downloads, add WooCommerce and we can swap the buttons.
+
+IF YOUR LIVE SITE IS ALREADY WORDPRESS
+--------------------------------------
+1. Take a backup first (UpdraftPlus or your host backup).
+2. Upload + activate Geekett.
+3. Preview before changing DNS — you’re already on the domain.
+4. Keep your old theme installed (not active) so you can switch back.
+
+That’s it. The design lives inside WordPress as a theme, not as a React app.

@@ -11,28 +11,238 @@ export const siteNav = [
   { to: "/about", label: "About" },
 ] as const;
 
+export const homeHero = {
+  kicker: "One-woman studio · Bella + Builder Bot Bobby",
+  title: "Your Business Is Running On Sticky Notes And A Prayer.",
+  sub: "Let’s Give It A System, A Site, And A Sidekick That Actually Ship.",
+  body: "Most “tech partners” show up with a deck, a discovery-call stack, and a six-month fog. Geekett is Bella — one woman, one builder bot, and a written process. No committee. No jargon. You write a brief. We send a plan. Then we build.",
+  chips: [
+    "No meeting marathon",
+    "Written process",
+    "Phones first",
+    "Slightly allergic to boring",
+  ],
+} as const;
+
+export const services = [
+  {
+    id: "automation",
+    kicker: "01",
+    title: "AI Automation Systems",
+    headline: "Stop Feeding The Machine. Make The Machine Feed You.",
+    lead: "You didn’t start a business to copy-paste the same caption, chase the same follow-up, or open seventeen tabs named “final_FINAL2.” That’s not hustle. That’s a bug.",
+    body: "Geekett builds AI automation systems that steal hours back without stealing your voice. Bobby maps the busywork. Bella keeps it human. You keep sounding like you — just faster.",
+    punch:
+      "This is not a robot takeover. It’s a very polite uprising against copy-paste.",
+    benefits: [
+      {
+        label: "Save Time",
+        text: "Recurring tasks run while you’re with clients, not instead of them.",
+      },
+      {
+        label: "Increase Efficiency",
+        text: "One lean stack. One playbook. No “we bought another tool” spiral.",
+      },
+      {
+        label: "Grow Revenue",
+        text: "Follow-ups go out. Offers stay visible. Leaks in your pipeline get patched.",
+      },
+    ],
+    cta: "Get Free Blueprint",
+    href: "/automation",
+    note: "Written brief. Bella replies in one business day with fit, scope, and a From $ starting line.",
+    icon: "automation" as const,
+  },
+  {
+    id: "mvp-blueprint",
+    kicker: "02",
+    title: "App MVP Blueprint",
+    headline: "From Fuzzy Idea To A Blueprint You Can Build",
+    lead: "Have an app idea but no idea what belongs in version one? That’s normal. A pile of notes is not a plan.",
+    body: "Send your idea in. You’ll get a personalized App MVP Blueprint — what to build first, what to skip, and how to explain it so people actually get it. Written for founders who want a plan, not a pep talk.",
+    punch: "No pitch-deck theater. A document you can actually use.",
+    benefits: [
+      {
+        label: "Save Time",
+        text: "Stop rebuilding the same feature list in three notebooks.",
+      },
+      {
+        label: "Increase Efficiency",
+        text: "One blueprint. First version, skip list, and a story you can say out loud.",
+      },
+      {
+        label: "Grow Revenue",
+        text: "A product story people understand is a product people pay for.",
+      },
+    ],
+    cta: "Submit Your App Idea",
+    href: "/geekettapp#mvp-blueprint",
+    note: "Bella reads every idea. Your blueprint comes back in writing in 2–3 business days.",
+    icon: "blueprint" as const,
+  },
+  {
+    id: "apps",
+    kicker: "03",
+    title: "App Consulting",
+    headline: "Your App Idea Is Not “Too Early.” It’s Under-Briefed.",
+    lead: "Everyone has an app idea. Almost nobody has an MVP that a stranger would open twice. That’s the gap. We live in the gap.",
+    body: "Geekett app consulting turns a fuzzy “what if” into a build order: what to ship first, what to skip, how to talk about it, and how not to light money on fire in version 1. Bella is the strategist. Bobby is the checklist tyrant (affectionate).",
+    punch: "We won’t pretend you need a 40-screen empire. We will pretend Bobby didn’t just highlight “cut this.” He did.",
+    benefits: [
+      {
+        label: "Save Time",
+        text: "Stop rebuilding the same feature list in three notebooks.",
+      },
+      {
+        label: "Increase Efficiency",
+        text: "One MVP path. One feature map. One launch checklist you can follow on a Tuesday.",
+      },
+      {
+        label: "Grow Revenue",
+        text: "A product story people understand is a product people pay for.",
+      },
+    ],
+    cta: "Get MVP Plan",
+    href: "/geekettapp#mvp-blueprint",
+    note: "Tell us the idea in writing. We’ll send a scoped App Package (from $1,800 CAD) if it’s a match.",
+    icon: "apps" as const,
+  },
+  {
+    id: "websites",
+    kicker: "04",
+    title: "Mobile Responsive Websites",
+    headline: "If They Have To Pinch-Zoom, They Already Left.",
+    lead: "Your site is not a digital brochure. It’s the employee who never clocks out. If that employee mumbles, loads like 2009, or hides the “hire me” button under a metaphor — you’re paying rent on a ghost town.",
+    body: "Geekett builds mobile-first WordPress sites for independent businesses who want a clear offer, a clean structure, and a written build. Not a meeting marathon. Fixed CAD packages. Phones first. Handoff you can actually use.",
+    punch: "50% to start. 50% before launch. Written updates — not a calendar hostage situation.",
+    benefits: [
+      {
+        label: "Save Time",
+        text: "No six-call “discovery journey.” You brief. We reply. We build.",
+      },
+      {
+        label: "Increase Efficiency",
+        text: "One promise. One path. Pages that do a job.",
+      },
+      {
+        label: "Grow Revenue",
+        text: "A clear next step on every screen means more people take it.",
+      },
+    ],
+    cta: "Start a Project Brief",
+    href: "/project-brief",
+    note: "Three short steps. Fit, package, and next steps in writing within one business day. No intro call required.",
+    icon: "websites" as const,
+  },
+] as const;
+
+export const mvpBlueprint = {
+  kicker: "App MVP Blueprint",
+  headline: "From Fuzzy Idea To A Blueprint You Can Build",
+  body: "Have an app idea but no idea what belongs in version one? Send it in. You’ll get a personalized App MVP Blueprint — what to build first, what to skip, and how to explain it so people actually get it. Written for founders who want a plan, not a pep talk.",
+  cta: "Submit Your App Idea",
+  note: "Bella reads every idea. Your blueprint comes back in writing in 2–3 business days.",
+} as const;
+
+export const whyGeekett = {
+  eyebrow: "Why Geekett",
+  title: "One Woman. One Builder Bot. Not A Foosball Table.",
+  body: "Bella does the strategy, design, and human judgment. Bobby keeps the checklists tidy, the updates rolling, and the scope from wandering into a side quest. We work by message and shared docs. If your favorite vendor’s love language is “circling back,” we are not that vendor.",
+  pills: ["Smart apps", "Bright ideas", "Built with heart", "Slightly allergic to boring"],
+} as const;
+
+export const automationStrategies = [
+  {
+    n: "01",
+    title: "Follow-Up That Doesn’t Ghost",
+    win: "Grow revenue",
+    body: "Leads don’t die of disinterest. They die of “I’ll reply later.” A simple sequence — thank-you, next step, nudge — runs while you’re on a call. Humans still send the weird, personal ones.",
+    skip: "Don’t automate the close. Automate the silence.",
+  },
+  {
+    n: "02",
+    title: "Content Without The 17-Tab Ritual",
+    win: "Save time",
+    body: "One weekly rhythm. Voice-safe prompts. Drafts in your tone, not ChatGPT’s TED Talk. You approve, schedule, done. Tab 47 can retire.",
+    skip: "If it doesn’t sound like you, it doesn’t ship.",
+  },
+  {
+    n: "03",
+    title: "Lead Capture That Files Itself",
+    win: "Increase efficiency",
+    body: "Form → list → tagged → first email. No copy-paste into a spreadsheet named clients_REAL. The next step is obvious for them and for you.",
+    skip: "If nobody is visiting, automation won’t invent traffic. Fix the site first.",
+  },
+  {
+    n: "04",
+    title: "Client Onboarding On Rails",
+    win: "Save time",
+    body: "Paid → welcome → intake → kickoff doc. Same warm path every time. You stop rewriting “so excited to work together” at 11pm.",
+    skip: "Keep the first live conversation human. The paperwork can be a bot.",
+  },
+  {
+    n: "05",
+    title: "Inbox First Drafts, Your Voice",
+    win: "Increase efficiency",
+    body: "Repeating FAQs get a first draft in your language. You hit send or rewrite the sentence that matters. Bobby loves a snippet library. Bella checks it still sounds like Bella.",
+    skip: "Never auto-send anything that could start a fight.",
+  },
+  {
+    n: "06",
+    title: "Launch Loops, Not One-Day Fireworks",
+    win: "Grow revenue",
+    body: "Offers shouldn’t vanish after Tuesday. A small loop: tease, open, reminder, last call, recap. Reusable. Calm. No 40-tool launch circus.",
+    skip: "If you don’t have an offer, we won’t automate a void.",
+  },
+] as const;
+
+export const automationRules = [
+  "Automate the repetitive bits. Keep the personality.",
+  "One lean stack beats a graveyard of logins.",
+  "If you wouldn’t say it out loud, the bot doesn’t send it.",
+  "Start with one leak. Patch it. Then pick the next.",
+] as const;
+
+export const automationBeats = [
+  {
+    n: "1",
+    title: "Show Us A Messy Week",
+    body: "Where time actually goes: follow-ups, content, onboarding, inbox. Written. No intro call.",
+  },
+  {
+    n: "2",
+    title: "Pick The Automations That Pay Rent",
+    body: "We choose 1–3 plays with a clear From $ line. Not a 40-workflow fantasy map.",
+  },
+  {
+    n: "3",
+    title: "Install + A Playbook You Can Run",
+    body: "Bella and Bobby set it up, test it, and hand you steps a tired Tuesday can follow.",
+  },
+] as const;
+
 export const wpProcess = [
   {
     n: "1",
-    title: "Send a brief",
+    title: "Send A Brief",
     body: "Tell me what you’re building in writing. No intro call required.",
     icon: "file" as const,
   },
   {
     n: "2",
-    title: "Clear package + price",
+    title: "Clear Package + Price",
     body: "Fit + fixed CAD package (Refresh, Starter, or Business).",
     icon: "tag" as const,
   },
   {
     n: "3",
-    title: "Shared updates",
+    title: "Shared Updates",
     body: "Shared workspace with written updates and short screen recordings.",
     icon: "chat" as const,
   },
   {
     n: "4",
-    title: "Launch guide + handoff",
+    title: "Launch Guide + Handoff",
     body: "Launch guide and you know exactly what changed.",
     icon: "clip" as const,
   },
@@ -42,6 +252,7 @@ export const wpTiers = [
   {
     name: "Refresh",
     price: "$1,800",
+    icon: "refresh" as const,
     best: "When the bones are there and the presentation isn’t helping you sell.",
     line: "Tighten an existing site: offer, structure, phone experience, handoff.",
     includes: [
@@ -55,6 +266,7 @@ export const wpTiers = [
   {
     name: "Starter",
     price: "$2,800",
+    icon: "starter" as const,
     best: "A new site, phones first, with a clear homepage promise.",
     line: "New 5–7 page WordPress site, basic SEO, launch guide.",
     includes: [
@@ -69,6 +281,7 @@ export const wpTiers = [
   {
     name: "Business",
     price: "$5,500",
+    icon: "business" as const,
     best: "When the site is a real growth tool, not just a brochure.",
     line: "Custom sections, stronger SEO map, two revision rounds, fuller handoff.",
     includes: [
@@ -93,32 +306,35 @@ export const paths = [
   {
     id: "ai-apps",
     kicker: "01",
-    title: "AI App Packages",
+    title: "App Consulting",
     blurb:
-      "Turn a fuzzy app idea into a clear MVP path, feature map, and launch structure — with Bobby keeping the checklist tidy.",
-    href: "/geekettapp#ai-apps",
-    cta: "Explore AI apps",
+      "Turn a fuzzy “what if” into a build order — MVP path, feature map, and a launch checklist Bobby will actually let you keep.",
+    href: "/geekettapp#mvp-blueprint",
+    cta: "Submit Your App Idea",
     icon: "smartphone",
+    mark: "apps" as const,
   },
   {
     id: "wordpress",
     kicker: "02",
-    title: "WordPress Website Packages",
+    title: "Mobile Responsive Websites",
     blurb:
-      "Mobile-first WordPress sites with a clear offer, clean structure, and a written build process. No meeting marathon.",
+      "Mobile-first WordPress that sells on a phone. Clear offer, clean structure, written build. Pinch-zoom is not a strategy.",
     href: "/#packages",
-    cta: "Explore WordPress",
+    cta: "See website packages",
     icon: "globe",
+    mark: "websites" as const,
   },
   {
     id: "marketing",
     kicker: "03",
-    title: "AI Marketing Systems",
+    title: "AI Automation Systems",
     blurb:
-      "Friendly AI workflows that help you create, schedule, and ship marketing without drowning in tools.",
-    href: "/geekettapp#marketing",
-    cta: "Explore marketing",
+      "Steal hours back without stealing your voice. Lean AI workflows for follow-ups, content, and the tabs named final_FINAL2.",
+    href: "/automation",
+    cta: "Explore strategies",
     icon: "sparkles",
+    mark: "automation" as const,
   },
   {
     id: "shop",
@@ -129,18 +345,19 @@ export const paths = [
     href: "/shop",
     cta: "Browse the shop",
     icon: "bag",
+    mark: "starter" as const,
   },
 ] as const;
 
 export const packages = [
   {
     id: "ai-apps",
-    title: "AI App Packages",
+    title: "App Consulting",
     price: "From $1,800 CAD",
     priceNote: "Recommended starting line — confirm before launch",
     priceStatus: "proposed" as const,
     bestFor:
-      "Founders and creators with an app idea who need a clear MVP path",
+      "Founders and creators with an app idea who need a clear MVP path — not another pep talk",
     who: "Solo founders, creators, and idea people who have an app concept (or a messy pile of notes) and want a friendly, actionable path from “what if” to “here’s what we build first.”",
     includes: [
       "Idea clarity and positioning workshop (async-friendly)",
@@ -153,18 +370,19 @@ export const packages = [
     outcome:
       "A beginner-friendly MVP plan and next steps — not a jargon fog. You’ll know what to build first, what to skip, and how to talk about your app.",
     bobby:
-      "Start with the smallest version that proves your idea. Bobby loves a tight MVP — fewer features, clearer story, faster launch.",
-    mailSubject: "AI App Package enquiry",
-    cta: "Ask about AI apps",
+      "Start with the smallest version that proves your idea. Bobby loves a tight MVP — fewer features, clearer story, faster launch. He will highlight “cut this.” Affectionately.",
+    mailSubject: "App Consulting enquiry",
+    cta: "Get MVP Plan",
+    mark: "apps" as const,
   },
   {
     id: "wordpress",
-    title: "WordPress Website Packages",
+    title: "Mobile Responsive Websites",
     price: "From $1,800 CAD",
     priceNote: "Live on geekett.com — Refresh $1,800 · Starter $2,800 · Business $5,500",
     priceStatus: "live" as const,
     bestFor:
-      "Independent businesses who need a mobile-first site that sells clearly",
+      "Independent businesses who need a mobile-first site that sells clearly — not a pretty ghost town",
     who: "Solo founders and service providers who want a responsive WordPress site with a clear offer — without a meeting-heavy agency process.",
     includes: [
       "Strategy + site structure for phones first",
@@ -178,18 +396,19 @@ export const packages = [
       "A site that feels like you, works on mobile, and makes the next step obvious for visitors — refresh, new build, or growth-ready package.",
     bobby:
       "A clear homepage promise beats ten clever sections. Lead with what you help people do — Bobby will remind us if we wander.",
-    mailSubject: "WordPress Package enquiry",
-    cta: "Open the WordPress brief",
+    mailSubject: "Website Package enquiry",
+    cta: "Start a Project Brief",
+    mark: "websites" as const,
     liveTiers: wpTiers,
   },
   {
     id: "marketing",
-    title: "AI Marketing Systems",
+    title: "AI Automation Systems",
     price: "From $1,800 CAD",
     priceNote: "Recommended starting line — confirm before launch",
     priceStatus: "proposed" as const,
-    bestFor: "Creators who want smart systems, not another tool pile",
-    who: "Digital creators and founders who want AI-assisted marketing workflows — content, outreach, or launch rhythms — without a degree in prompt engineering.",
+    bestFor: "Owners who want hours back — not another tool pile and a prompt degree",
+    who: "Digital creators and founders who want AI-assisted workflows — content, outreach, or launch rhythms — without sounding like a robot or drowning in apps.",
     includes: [
       "Workflow map tailored to your offers",
       "AI prompt packs and process templates",
@@ -197,13 +416,14 @@ export const packages = [
       "Setup support and a reusable playbook",
       "Tips for staying human while automating the busywork",
     ],
-    how: "We learn how you market today → design a lean AI system → Bella and Bobby help you install and test it → you walk away with hours back and a process you can actually run.",
+    how: "We learn how you work today → design a lean AI system → Bella and Bobby help you install and test it → you walk away with hours back and a process you can actually run.",
     outcome:
-      "Marketing that feels like magic but is really just smart systems — consistent, beginner-friendly, and shaped around your voice.",
+      "Busywork on autopilot. Personality still yours. Follow-ups go out, offers stay visible, and tab 47 finally closes.",
     bobby:
       "Automate the repetitive bits; keep the personality. Bobby’s favourite systems still sound like you.",
-    mailSubject: "AI Marketing Systems enquiry",
-    cta: "Ask about marketing systems",
+    mailSubject: "AI Automation Systems enquiry",
+    cta: "Get Free Blueprint",
+    mark: "automation" as const,
   },
 ] as const;
 
@@ -226,7 +446,7 @@ export const shopItems = [
   },
   {
     id: "clarity",
-    title: "Offer & site clarity templates",
+    title: "Offer & Site Clarity Templates",
     price: 37,
     priceLabel: "$37 CAD",
     category: "WordPress",
@@ -242,7 +462,7 @@ export const shopItems = [
   },
   {
     id: "workflows",
-    title: "AI workflow starter pack",
+    title: "AI Workflow Starter Pack",
     price: 57,
     priceLabel: "$57 CAD",
     category: "AI workflows",
@@ -336,17 +556,17 @@ export const labProjects = [
 export const beats = [
   {
     n: "1",
-    title: "Share where you are",
+    title: "Share Where You Are",
     body: "Idea stage, need-a-website stage, or “please just give me the system” — tell Bella in plain words. A written brief. No intro call required.",
   },
   {
     n: "2",
-    title: "Get a clear package",
+    title: "Get A Clear Package",
     body: "Scoped deliverables, a From $ price line, and a written process. Bobby helps keep the plan neat. Fit first — then we start.",
   },
   {
     n: "3",
-    title: "Build and launch",
+    title: "Build And Launch",
     body: "Shared updates, short screen recordings, friendly handoff, and beginner-friendly guidance so you can ship with confidence.",
   },
 ] as const;
@@ -354,7 +574,7 @@ export const beats = [
 export const faqs = [
   {
     q: "What’s the difference between a package and a digital product?",
-    a: "Packages are custom or guided builds with Bella (AI apps, WordPress, or marketing systems). Digital products are grab-and-go — guides, templates, and kits you can use today from the shop. Many people start with a product, then book a package when they’re ready.",
+    a: "Packages are custom or guided builds with Bella — App Consulting, mobile-first websites, or AI Automation Systems. Digital products are grab-and-go: guides, templates, and kits from the shop. Many people start with a product, then book a package when they’re ready.",
   },
   {
     q: "Do I need to know how to code?",
@@ -362,11 +582,11 @@ export const faqs = [
   },
   {
     q: "Who’s Builder Bot Bobby?",
-    a: "Builder Bot Bobby is Bella’s helpful robot sidekick. He assists with research, checklists, drafts, and keeping builds organized so Bella can focus on strategy, design, and the human touch. One-woman studio + one builder bot.",
+    a: "Builder Bot Bobby is Bella’s helpful robot sidekick. He assists with research, checklists, drafts, and keeping builds organized so Bella can focus on strategy, design, and the human touch. One-woman studio + one builder bot. He lives for the list.",
   },
   {
-    q: "Can I get WordPress or marketing help without an app idea?",
-    a: "Absolutely. WordPress Website Packages and AI Marketing Systems stand on their own. You don’t need an app idea — pick the path that matches where you are.",
+    q: "Can I get a website or automation without an app idea?",
+    a: "Absolutely. Mobile Responsive Websites and AI Automation Systems stand on their own. You don’t need an app idea — pick the path that matches where you are.",
   },
   {
     q: "How long do packages take?",
@@ -374,7 +594,7 @@ export const faqs = [
   },
   {
     q: "Will you fully build my app?",
-    a: "AI App Packages focus on clarity, MVP planning, and launch structure. Full build support can be discussed case by case — Bella will be honest about fit, timeline, and what’s included so there’s no jargon fog.",
+    a: "App Consulting focuses on clarity, MVP planning, and launch structure. Full build support can be discussed case by case — Bella will be honest about fit, timeline, and what’s included so there’s no jargon fog.",
   },
   {
     q: "Are the digital products beginner-friendly?",
@@ -382,23 +602,23 @@ export const faqs = [
   },
   {
     q: "How do I start?",
-    a: "Send a Project Brief for WordPress, open App Studio for apps and marketing, or grab something from the shop. Or email bella@geekett.com.",
+    a: "Send a Project Brief for a website, open App Studio for app consulting or automation, or grab something from the shop. Or email bella@geekett.com. Bobby will put it on the list.",
   },
 ] as const;
 
 export const proofCards = [
   {
-    title: "The cash-plan WordPress home",
+    title: "The Cash-Plan WordPress Home",
     meta: "Live · geekett.com",
     body: "Fixed CAD packages, a written process, and a Project Brief that replies in one business day. This is the proof that Geekett already sells with clarity.",
   },
   {
-    title: "Studio products in the lab",
+    title: "Studio Products In The Lab",
     meta: "Cooking · 8 ventures",
     body: "SubDeck, LaunchDeckAI, Soul Kindred, and five more. The lab is evidence that the studio ships friendly tech — not just plans for other people.",
   },
   {
-    title: "Three documented proof examples",
+    title: "Three Documented Proof Examples",
     meta: "Priority · Sept 2026 brief",
     body: "The business brief names this as the next proof job. Until real named client quotes exist, pages should not invent a wall of love.",
   },

@@ -9,7 +9,7 @@ export const Route = createFileRoute("/geekettapp")({
       {
         name: "description",
         content:
-          "Geekett App Studio: packages for AI apps, WordPress sites, and AI marketing, plus a starter shop.",
+          "Geekett App Studio: App Consulting and AI Automation Systems. Clear packages. Written process. No jargon fog.",
       },
     ],
   }),

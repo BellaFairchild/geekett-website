@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Geekett — smart apps, bright ideas, built with heart",
+      "hasCanvas": false,
+      "bodyTextLen": 7326,
+      "bodyTextHash": "d3adef40fced02ed44e1905f0b488a7249c44e2031b6932c85644581c1123c44",
+      "bodyTextPrefix": "G Geekett STUDIO Home App Studio App Lab Shop About Start A Brie",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/artifacts/titlecase-home.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Geekett — smart apps, bright ideas, built with heart",
+      "hasCanvas": false,
+      "bodyTextLen": 7282,
+      "bodyTextHash": "ff7fef7c037dc2ea377cd9df4012cf47aa531e0435948997bc01ecf37fab174d",
+      "bodyTextPrefix": "G Geekett STUDIO Menu ONE-WOMAN STUDIO · BELLA + BUILDER BOT BOB",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/artifacts/titlecase-home-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/artifacts/titlecase-home.json"
+}

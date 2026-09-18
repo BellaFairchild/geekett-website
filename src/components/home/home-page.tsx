@@ -10,6 +10,9 @@ import {
 import { SiteFooter } from "@/components/chrome/site-footer";
 import { SiteHeader } from "@/components/chrome/site-header";
 import { WorkingTogether } from "@/components/chrome/working-together";
+import { HomeServices } from "@/components/home/services";
+import { BrandTagline } from "@/components/brand";
+import { RenderedIcon } from "@/components/icons/rendered-icon";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -20,8 +23,9 @@ import {
 } from "@/components/section";
 import {
   fitChips,
+  homeHero,
   shopItems,
-  TAGLINE,
+  whyGeekett,
   wpProcess,
   wpTiers,
 } from "@/lib/geekett/content";
@@ -32,50 +36,44 @@ export function HomePage() {
       <SiteHeader current="/" />
       <main>
         <section className="px-5 pb-16 pt-10 sm:px-8 sm:pt-14 lg:pt-16">
-          <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
-            <div>
-              <p className="mb-4 font-display text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-bobby">
-                One-woman studio · Mobile-first WordPress
-              </p>
-              <h1 className="text-[2.15rem] font-semibold leading-[1.08] text-ink sm:text-[3.05rem] lg:text-[3.25rem]">
-                Mobile-first WordPress sites for independent business builders.
-              </h1>
-              <p className="mt-5 max-w-xl text-[1.08rem] leading-relaxed text-ink-soft">
-                Clear offers, clean structure, and a simple written process. No
-                meeting marathon — just a brief, a fixed package, and a site that
-                works on phones first.
-              </p>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <Button size="lg" asChild>
-                  <Link to="/project-brief">Start a Project Brief</Link>
-                </Button>
-                <Button size="lg" variant="ghost" asChild>
-                  <a href="#packages">See packages</a>
-                </Button>
-              </div>
-              <ul className="mt-8 flex flex-wrap gap-2">
-                {[
-                  "Fixed CAD packages",
-                  "Written process",
-                  "No meeting marathon",
-                  "Phones first",
-                ].map((item) => (
-                  <li
-                    key={item}
-                    className="hover-pop flex items-center gap-1.5 rounded-full border border-line bg-cream px-3 py-1.5 text-xs font-medium text-ink-soft"
-                  >
-                    <Check className="size-3.5 text-bobby" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-6 font-display text-sm font-semibold text-heart">
-                {TAGLINE}
-              </p>
+          <div className="mx-auto max-w-6xl text-center">
+            <p className="mb-5 font-display text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-bobby">
+              {homeHero.kicker}
+            </p>
+            <BrandTagline className="text-[1.85rem] sm:text-[2.4rem] lg:text-[2.65rem]" />
+            <WorkingTogether className="mx-auto mt-8 max-w-[680px]" />
+            <h1 className="mt-12 text-[2.15rem] font-semibold leading-[1.08] text-ink sm:text-[3.05rem] lg:text-[3.25rem]">
+              {homeHero.title}
+            </h1>
+            <p className="mx-auto mt-4 max-w-xl font-display text-[1.15rem] font-semibold leading-snug text-heart sm:text-[1.25rem]">
+              {homeHero.sub}
+            </p>
+            <p className="mx-auto mt-5 max-w-xl text-[1.08rem] leading-relaxed text-ink-soft">
+              {homeHero.body}
+            </p>
+            <div className="mt-7 flex flex-wrap justify-center gap-3">
+              <Button size="lg" asChild>
+                <Link to="/project-brief">Start a Project Brief</Link>
+              </Button>
+              <Button size="lg" variant="ghost" asChild>
+                <a href="#services">Our Services</a>
+              </Button>
             </div>
-            <WorkingTogether />
+            <ul className="mt-8 flex flex-wrap justify-center gap-2">
+              {homeHero.chips.map((item) => (
+                <li
+                  key={item}
+                  className="hover-pop flex items-center gap-1.5 rounded-full border border-line bg-cream px-3 py-1.5 text-xs font-medium text-ink-soft"
+                >
+                  <Check className="size-3.5 text-bobby" />
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
+
+        <HomeServices />
 
         <section
           id="process"
@@ -86,10 +84,10 @@ export function HomePage() {
           }}
         >
           <div className="mx-auto w-full max-w-6xl">
-            <h2 className="font-display text-[2rem] font-semibold leading-[1.1] text-ink sm:text-[2.35rem]">
+            <h2 className="text-center font-display text-[2rem] font-semibold leading-[1.1] text-ink sm:text-[2.35rem]">
               Our Process
             </h2>
-            <p className="mt-3 max-w-xl text-[1.05rem] leading-relaxed text-ink-soft">
+            <p className="mx-auto mt-3 max-w-xl text-center text-[1.05rem] leading-relaxed text-ink-soft">
               We know your time is valuable — written updates, not a meeting
               stack.
             </p>
@@ -144,25 +142,29 @@ export function HomePage() {
         </section>
 
         <Section id="packages">
-          <Eyebrow>Packages</Eyebrow>
-          <SectionTitle>WordPress website packages</SectionTitle>
-          <SectionIntro>
-            Fixed CAD prices. 50% to start, 50% before launch. Written updates
-            and short screen recordings by default — not a meeting schedule.
+          <Eyebrow className="text-center">Website Packages</Eyebrow>
+          <SectionTitle className="mx-auto text-center">
+            Mobile-First WordPress, Fixed CAD Prices.
+          </SectionTitle>
+          <SectionIntro className="mx-auto text-center">
+            Refresh, Starter, or Business. 50% to start, 50% before launch.
+            Written updates and short screen recordings by default — not a
+            calendar hostage situation.
           </SectionIntro>
           <div className="mt-10 grid gap-5 lg:grid-cols-3">
-            {wpTiers.map((tier) => (
+            {wpTiers.map((tier, i) => (
               <article
                 key={tier.name}
-                className="hover-lift flex flex-col rounded-xl border border-line bg-cream p-6 hover:border-heart/30"
+                className="hover-lift group flex flex-col rounded-xl border border-line bg-cream p-6 hover:border-heart/30"
               >
-                <div className="flex items-start justify-between gap-3">
+                <div className="flex flex-col items-center gap-2">
+                  <RenderedIcon name={tier.icon} delay={(i % 4) as 0 | 1 | 2 | 3} />
+                  <Badge variant="live">Live</Badge>
                   <h3 className="font-display text-2xl font-semibold">
                     {tier.name}
                   </h3>
-                  <Badge variant="live">Live</Badge>
                 </div>
-                <p className="mt-2 font-display text-xl font-semibold tabular-nums">
+                <p className="mt-2 text-center font-display text-xl font-semibold tabular-nums">
                   {tier.price}{" "}
                   <span className="text-sm font-medium text-muted">CAD</span>
                 </p>
@@ -214,20 +216,20 @@ export function HomePage() {
                     className="h-[90%] w-auto object-contain transition-transform duration-300 ease-out group-hover:-translate-y-1.5 group-hover:rotate-[-4deg] group-hover:scale-[1.06]"
                   />
                 </div>
-                <div>
+                <div className="text-center">
                   <p className="font-display text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-muted">
                     Studio sidekick
                   </p>
                   <h2 className="mt-3 font-display text-[1.85rem] font-semibold leading-[1.12] text-ink sm:text-[2.2rem]">
                     Meet Builder Bot Bobby
                   </h2>
-                  <p className="mt-4 max-w-2xl text-[1.05rem] leading-relaxed text-ink-soft">
+                  <p className="mx-auto mt-4 max-w-2xl text-[1.05rem] leading-relaxed text-ink-soft">
                     Bobby is Bella’s studio sidekick — the cheerful helper who
                     keeps checklists tidy, written updates rolling, and the build
                     organized. He’s not a replacement for Bella; he’s the bot who
                     helps her one-woman studio stay clear, warm, and on track.
                   </p>
-                  <ul className="mt-6 flex flex-wrap items-center gap-x-2 gap-y-2">
+                  <ul className="mt-6 flex flex-wrap items-center justify-center gap-x-2 gap-y-2">
                     {[
                       "Checklists tidy",
                       "Written updates",
@@ -254,17 +256,25 @@ export function HomePage() {
         </section>
 
         <Section id="fit">
-          <Eyebrow>Who it’s for</Eyebrow>
-          <SectionTitle>Independent builders who want clarity, not a committee.</SectionTitle>
-          <SectionIntro>
-            Solo founders and service providers who want a mobile-first WordPress
-            site without a meeting-heavy agency process.
-          </SectionIntro>
-          <ul className="mt-8 flex flex-wrap gap-2">
-            {fitChips.map((chip) => (
+          <Eyebrow className="text-center">{whyGeekett.eyebrow}</Eyebrow>
+          <SectionTitle className="mx-auto text-center">{whyGeekett.title}</SectionTitle>
+          <SectionIntro className="mx-auto text-center">{whyGeekett.body}</SectionIntro>
+          <ul className="mt-8 flex flex-wrap justify-center gap-2">
+            {whyGeekett.pills.map((chip) => (
               <li
                 key={chip}
                 className="hover-pop rounded-full border border-line bg-cream px-4 py-2 text-sm font-medium"
+              >
+                {chip}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 text-center text-sm text-muted">Also a fit if you’re one of these:</p>
+          <ul className="mt-3 flex flex-wrap justify-center gap-2">
+            {fitChips.map((chip) => (
+              <li
+                key={chip}
+                className="hover-pop rounded-full border border-line bg-paper px-4 py-2 text-sm font-medium text-ink-soft"
               >
                 {chip}
               </li>
@@ -274,15 +284,17 @@ export function HomePage() {
 
         <Section id="studio" alt>
           <div className="grid items-center gap-8 lg:grid-cols-2">
-            <div>
+            <div className="text-center">
               <Eyebrow>App Studio</Eyebrow>
-              <SectionTitle>Apps, systems, and a shop.</SectionTitle>
-              <SectionIntro>
-                Same studio, same Bella. AI apps, marketing systems, the App Lab,
-                and grab-and-go digital products live here on Geekett — not on a
-                side street.
+              <SectionTitle className="mx-auto">
+                Apps, Systems, And A Shop — Same Studio, Same Bella.
+              </SectionTitle>
+              <SectionIntro className="mx-auto">
+                App consulting, AI automation, the App Lab, and grab-and-go
+                digital products live here on Geekett. Not a side street. Not a
+                committee.
               </SectionIntro>
-              <div className="mt-7 flex flex-wrap gap-3">
+              <div className="mt-7 flex flex-wrap justify-center gap-3">
                 <Button asChild>
                   <Link to="/geekettapp">Open App Studio</Link>
                 </Button>
@@ -302,9 +314,9 @@ export function HomePage() {
         </Section>
 
         <Section id="shop-tease">
-          <Eyebrow>Shop</Eyebrow>
-          <SectionTitle>Start before a full package</SectionTitle>
-          <SectionIntro>
+          <Eyebrow className="text-center">Shop</Eyebrow>
+          <SectionTitle className="mx-auto text-center">Start Before A Full Package</SectionTitle>
+          <SectionIntro className="mx-auto text-center">
             Instant guides and templates when you want progress this week.
           </SectionIntro>
           <div className="mt-10 grid gap-4 md:grid-cols-3">
@@ -316,7 +328,7 @@ export function HomePage() {
                 <Badge variant="paper" className="w-fit">
                   {item.category}
                 </Badge>
-                <h3 className="mt-3 font-display text-xl font-semibold">
+                <h3 className="mt-3 text-center font-display text-xl font-semibold">
                   {item.title}
                 </h3>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-soft">
@@ -328,7 +340,7 @@ export function HomePage() {
               </article>
             ))}
           </div>
-          <div className="mt-8">
+          <div className="mt-8 flex justify-center">
             <Button asChild>
               <Link to="/shop">Browse the shop</Link>
             </Button>
@@ -361,12 +373,24 @@ export function HomePage() {
                 Next step
               </p>
               <h2 className="mt-3 font-display text-[2rem] font-semibold leading-[1.1] text-ink sm:text-[2.6rem]">
-                Start a Project Brief
+                Build Your Brief
               </h2>
-              <p className="mx-auto mt-4 max-w-2xl text-[1.05rem] leading-relaxed text-ink-soft">
-                Tell me what you’re building. I’ll reply within one business day
-                with fit, next step, and a clear package if it’s a match. We work
-                by message and shared docs — not calls.
+              <Link
+                to="/project-brief"
+                className="mx-auto mt-8 block w-full max-w-[340px] sm:max-w-[380px]"
+              >
+                <img
+                  src="/characters/geekett-qr-scan.png"
+                  alt="Geekett and Builder Bot Bobby with a phone — Build Project Brief, scan here"
+                  width={390}
+                  height={737}
+                  className="mx-auto h-auto w-full object-contain"
+                />
+              </Link>
+              <p className="mx-auto mt-8 max-w-2xl text-[1.05rem] leading-relaxed text-ink-soft">
+                Need the busywork to run itself, the app in your head to become a
+                plan, or a site that sells on a phone? Tell Bella in writing.
+                Bobby will put it on the list. He lives for the list.
               </p>
               <ul className="mt-6 flex flex-wrap items-center justify-center gap-x-2 gap-y-2">
                 {["Reply in one business day", "Message + docs, not calls"].map(
@@ -389,7 +413,7 @@ export function HomePage() {
                   ),
                 )}
               </ul>
-              <div className="mt-9">
+              <div className="mt-9 flex justify-center">
                 <Link
                   to="/project-brief"
                   className="hover-pop inline-flex h-12 items-center justify-center rounded-full px-8 text-base font-semibold text-cream transition-[transform,box-shadow] duration-200"
@@ -398,7 +422,7 @@ export function HomePage() {
                     boxShadow: "0 14px 30px -10px rgba(43, 184, 232, 0.55)",
                   }}
                 >
-                  Open Project Brief
+                  Start A Project Brief
                 </Link>
               </div>
             </div>

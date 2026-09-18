@@ -23,7 +23,7 @@ $faqs = [
       <div>
         <p class="gk-eyebrow">About</p>
         <h1 class="gk-h1" style="font-size:clamp(1.9rem,3vw,2.6rem)">One woman. One builder bot. Real handoff.</h1>
-        <p class="gk-lead">Geekett is Bella Fairchild’s one-woman studio. She builds mobile-first WordPress sites, AI app packages, and marketing systems for independent founders — with Builder Bot Bobby keeping the checklists tidy.</p>
+        <p class="gk-lead">Geekett is Bella’s one-woman studio. She builds mobile-first WordPress sites, AI app packages, and marketing systems for independent founders — with Builder Bot Bobby keeping the checklists tidy.</p>
         <p class="gk-lead">The work is async on purpose. You write a brief. Bella replies within a business day. Shared docs and short screen recordings replace a meeting marathon. Smart apps. Bright ideas. Built with heart.</p>
         <div class="gk-actions">
           <a class="gk-btn" href="<?php echo esc_url(geekett_page_url('project-brief')); ?>">Start a brief</a>

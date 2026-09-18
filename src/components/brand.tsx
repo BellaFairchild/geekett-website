@@ -39,6 +39,21 @@ export function Brand({
   );
 }
 
+export function BrandTagline({ className }: { className?: string }) {
+  return (
+    <p
+      className={cn(
+        "font-display text-[1.5rem] font-extrabold leading-[1.08] tracking-tight sm:text-[1.75rem]",
+        className,
+      )}
+    >
+      <span className="block text-ink">Smart Apps.</span>
+      <span className="block text-idea">Bright Ideas.</span>
+      <span className="block text-heart">Built with Heart.</span>
+    </p>
+  );
+}
+
 export function ViewSwitch({ current }: { current: "plan" | "prototype" }) {
   return (
     <div className="inline-flex rounded-full border border-line bg-cream p-1 shadow-lift">
