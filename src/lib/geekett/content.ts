@@ -295,6 +295,68 @@ export const wpTiers = [
   },
 ] as const;
 
+export const appTiers = [
+  {
+    name: "Blueprint",
+    price: "2–3 days",
+    priceSuffix: "turnaround",
+    icon: "blueprint" as const,
+    badge: "plan" as const,
+    badgeLabel: "Written",
+    best: "When the idea is in your notes and version one is still a fog.",
+    line: "A personalized App MVP Blueprint: what to build first, what to skip, how to talk about it.",
+    includes: [
+      "Idea in writing",
+      "First-version map",
+      "Skip list",
+      "Story you can say out loud",
+    ],
+    pay: "Bella reads every idea. Blueprint back in 2–3 business days.",
+    cta: "Submit Your App Idea",
+    href: "/geekettapp#mvp-blueprint",
+  },
+  {
+    name: "Consulting",
+    price: "From $1,800",
+    priceSuffix: "CAD",
+    icon: "apps" as const,
+    badge: "plan" as const,
+    badgeLabel: "Proposed",
+    best: "When you have an app idea and need a clear path — not another pep talk.",
+    line: "A build order: MVP path, feature map, and a launch checklist you can follow.",
+    includes: [
+      "Idea clarity workshop",
+      "MVP scope map",
+      "User flow outlines",
+      "Tech in plain language",
+      "Written handoff",
+    ],
+    pay: "50% to start, 50% before handoff. Confirm before we start.",
+    cta: "Get MVP Plan",
+    href: "/geekettapp#ai-apps",
+  },
+  {
+    name: "Automation",
+    price: "From $1,800",
+    priceSuffix: "CAD",
+    icon: "automation" as const,
+    badge: "plan" as const,
+    badgeLabel: "Proposed",
+    best: "When follow-ups, content, or onboarding keep eating the week.",
+    line: "Lean AI systems that steal hours back without stealing your voice.",
+    includes: [
+      "Workflow map",
+      "Prompt packs + templates",
+      "Simple tool stack",
+      "Setup support",
+      "Reusable playbook",
+    ],
+    pay: "50% to begin. Confirm in writing before we start.",
+    cta: "Get Free Blueprint",
+    href: "/automation",
+  },
+] as const;
+
 export const fitChips = [
   "Solo founders",
   "Service providers",

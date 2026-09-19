@@ -10,7 +10,6 @@ import {
 import { SiteFooter } from "@/components/chrome/site-footer";
 import { SiteHeader } from "@/components/chrome/site-header";
 import { WorkingTogether } from "@/components/chrome/working-together";
-import { HomeServices } from "@/components/home/services";
 import { BrandTagline } from "@/components/brand";
 import { RenderedIcon } from "@/components/icons/rendered-icon";
 import { Badge } from "@/components/ui/badge";
@@ -22,6 +21,7 @@ import {
   SectionTitle,
 } from "@/components/section";
 import {
+  appTiers,
   fitChips,
   homeHero,
   shopItems,
@@ -42,39 +42,8 @@ export function HomePage() {
             </p>
             <BrandTagline className="text-[1.85rem] sm:text-[2.4rem] lg:text-[2.65rem]" />
             <WorkingTogether className="mx-auto mt-8 max-w-[680px]" />
-            <h1 className="mx-auto mt-12 max-w-4xl text-[2.35rem] font-extrabold leading-[1.05] tracking-tight text-ink sm:text-[3.35rem] lg:text-[3.6rem]">
-              Your Business Is Running On Sticky Notes{" "}
-              <span className="text-heart">And A Prayer.</span>
-            </h1>
-            <p className="mx-auto mt-4 max-w-2xl font-display text-[1.2rem] font-extrabold leading-snug tracking-tight text-heart sm:text-[1.4rem]">
-              {homeHero.sub}
-            </p>
-            <p className="mx-auto mt-5 max-w-xl text-[1.08rem] leading-relaxed text-ink-soft">
-              {homeHero.body}
-            </p>
-            <div className="mt-7 flex flex-wrap justify-center gap-3">
-              <Button size="lg" asChild>
-                <Link to="/project-brief">Start a Project Brief</Link>
-              </Button>
-              <Button size="lg" variant="ghost" asChild>
-                <a href="#services">Our Services</a>
-              </Button>
-            </div>
-            <ul className="mt-8 flex flex-wrap justify-center gap-2">
-              {homeHero.chips.map((item) => (
-                <li
-                  key={item}
-                  className="hover-pop flex items-center gap-1.5 rounded-full border border-line bg-cream px-3 py-1.5 text-xs font-medium text-ink-soft"
-                >
-                  <Check className="size-3.5 text-bobby" />
-                  {item}
-                </li>
-              ))}
-            </ul>
           </div>
         </section>
-
-        <HomeServices />
 
         <section
           id="process"
@@ -141,6 +110,58 @@ export function HomePage() {
             </div>
           </div>
         </section>
+
+        <Section id="app-packages">
+          <Eyebrow className="text-center">App Services Packages</Eyebrow>
+          <SectionTitle className="mx-auto text-center">
+            App Plans And Systems, Clear Starting Lines.
+          </SectionTitle>
+          <SectionIntro className="mx-auto text-center">
+            Blueprint, Consulting, or Automation. Written process. Confirm
+            before we start — not a six-month fog.
+          </SectionIntro>
+          <div className="mt-10 grid gap-5 lg:grid-cols-3">
+            {appTiers.map((tier, i) => (
+              <article
+                key={tier.name}
+                className="hover-lift group flex flex-col rounded-xl border border-line bg-cream p-6 hover:border-heart/30"
+              >
+                <div className="flex flex-col items-center gap-2">
+                  <RenderedIcon name={tier.icon} delay={(i % 4) as 0 | 1 | 2 | 3} />
+                  <Badge variant={tier.badge}>{tier.badgeLabel}</Badge>
+                  <h3 className="font-display text-2xl font-extrabold tracking-tight">
+                    {tier.name}
+                  </h3>
+                </div>
+                <p className="mt-2 text-center font-display text-xl font-semibold tabular-nums">
+                  {tier.price}{" "}
+                  <span className="text-sm font-medium text-muted">
+                    {tier.priceSuffix}
+                  </span>
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                  {tier.line}
+                </p>
+                <p className="mt-2 text-xs text-muted">{tier.best}</p>
+                <ul className="mt-5 flex-1 space-y-2">
+                  {tier.includes.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-2 text-sm text-ink-soft"
+                    >
+                      <Check className="mt-0.5 size-4 shrink-0 text-bobby" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-5 text-xs text-muted">{tier.pay}</p>
+                <Button className="mt-5 w-full" asChild>
+                  <a href={tier.href}>{tier.cta}</a>
+                </Button>
+              </article>
+            ))}
+          </div>
+        </Section>
 
         <Section id="packages">
           <Eyebrow className="text-center">Website Packages</Eyebrow>
@@ -281,37 +302,6 @@ export function HomePage() {
               </li>
             ))}
           </ul>
-        </Section>
-
-        <Section id="studio" alt>
-          <div className="grid items-center gap-8 lg:grid-cols-2">
-            <div className="text-center">
-              <Eyebrow>App Studio</Eyebrow>
-              <SectionTitle className="mx-auto">
-                Apps, Systems, And A Shop — Same Studio, Same Bella.
-              </SectionTitle>
-              <SectionIntro className="mx-auto">
-                App consulting, AI automation, the App Lab, and grab-and-go
-                digital products live here on Geekett. Not a side street. Not a
-                committee.
-              </SectionIntro>
-              <div className="mt-7 flex flex-wrap justify-center gap-3">
-                <Button asChild>
-                  <Link to="/geekettapp">Open App Studio</Link>
-                </Button>
-                <Button variant="ghost" asChild>
-                  <Link to="/lab">See the App Lab</Link>
-                </Button>
-              </div>
-            </div>
-            <img
-              src="/characters/geekett-desk.webp"
-              alt="Geekett at her desk with app and WordPress orbs"
-              width={750}
-              height={772}
-              className="mx-auto h-auto w-full max-h-[380px] object-contain transition-transform duration-300 ease-out hover:-translate-y-1 hover:scale-[1.03] sm:max-h-[440px]"
-            />
-          </div>
         </Section>
 
         <Section id="shop-tease">
