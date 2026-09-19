@@ -191,7 +191,7 @@ export function BriefPage() {
     <div className="min-h-screen overflow-x-clip bg-brief-bg text-brief-text">
       <SiteHeader current="/project-brief" />
       <main className="mx-auto w-full max-w-[560px] px-4 pb-10 pt-8 sm:pt-10">
-        <h1 className="text-center font-display text-[1.65rem] font-semibold leading-tight sm:text-[1.85rem]">
+        <h1 className="text-center font-display text-[1.85rem] font-extrabold leading-tight tracking-tight sm:text-[2.15rem]">
           Start A Project Brief
         </h1>
         <p className="mx-auto mt-2 max-w-md text-center text-[0.98rem] leading-relaxed text-brief-muted">

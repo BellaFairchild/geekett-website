@@ -29,10 +29,10 @@ export function HomeServices() {
             <div className="flex justify-center">
               <RenderedIcon name={service.icon} delay={(i % 4) as 0 | 1 | 2 | 3} />
             </div>
-            <p className="mt-4 text-center font-display text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-muted">
+            <p className="mt-4 text-center font-display text-[0.78rem] font-bold uppercase tracking-[0.22em] text-bobby">
               {service.kicker} · {service.title}
             </p>
-            <h3 className="mt-2 text-center font-display text-[1.45rem] font-semibold leading-[1.15] sm:text-[1.75rem]">
+            <h3 className="mt-2 text-center font-display text-[1.55rem] font-extrabold leading-[1.12] tracking-tight sm:text-[1.85rem]">
               {service.headline}
             </h3>
             <p className="mt-4 max-w-3xl text-[1.02rem] leading-relaxed text-ink-soft">

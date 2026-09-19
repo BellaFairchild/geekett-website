@@ -76,7 +76,7 @@ export function ShopPage() {
                   <Badge variant="paper" className="mt-4 w-fit">
                     {item.category}
                   </Badge>
-                  <h2 className="mt-3 font-display text-xl font-semibold">
+                  <h2 className="mt-3 font-display text-xl font-extrabold tracking-tight">
                     {item.title}
                   </h2>
                   <p className="mt-2 text-sm leading-relaxed text-ink-soft">

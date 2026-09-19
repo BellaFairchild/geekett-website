@@ -36,7 +36,7 @@ export function Eyebrow({
   return (
     <p
       className={cn(
-        "mb-3 font-display text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-heart",
+        "mb-3 font-display text-[0.78rem] font-bold uppercase tracking-[0.22em] text-bobby",
         className,
       )}
     >
@@ -55,7 +55,7 @@ export function SectionTitle({
   return (
     <h2
       className={cn(
-        "max-w-3xl text-[1.85rem] font-semibold leading-[1.15] text-ink sm:text-[2.15rem]",
+        "mx-auto max-w-3xl text-center text-[1.95rem] font-extrabold leading-[1.12] tracking-tight text-ink sm:text-[2.45rem]",
         className,
       )}
     >
@@ -74,7 +74,7 @@ export function SectionIntro({
   return (
     <p
       className={cn(
-        "mt-3 max-w-2xl text-[1.05rem] leading-relaxed text-ink-soft",
+        "mx-auto mt-3 max-w-2xl text-center text-[1.05rem] leading-relaxed text-ink-soft",
         className,
       )}
     >

@@ -37,15 +37,16 @@ export function HomePage() {
       <main>
         <section className="px-5 pb-16 pt-10 sm:px-8 sm:pt-14 lg:pt-16">
           <div className="mx-auto max-w-6xl text-center">
-            <p className="mb-5 font-display text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-bobby">
+            <p className="mb-5 font-display text-[0.78rem] font-bold uppercase tracking-[0.22em] text-bobby">
               {homeHero.kicker}
             </p>
             <BrandTagline className="text-[1.85rem] sm:text-[2.4rem] lg:text-[2.65rem]" />
             <WorkingTogether className="mx-auto mt-8 max-w-[680px]" />
-            <h1 className="mt-12 text-[2.15rem] font-semibold leading-[1.08] text-ink sm:text-[3.05rem] lg:text-[3.25rem]">
-              {homeHero.title}
+            <h1 className="mx-auto mt-12 max-w-4xl text-[2.35rem] font-extrabold leading-[1.05] tracking-tight text-ink sm:text-[3.35rem] lg:text-[3.6rem]">
+              Your Business Is Running On Sticky Notes{" "}
+              <span className="text-heart">And A Prayer.</span>
             </h1>
-            <p className="mx-auto mt-4 max-w-xl font-display text-[1.15rem] font-semibold leading-snug text-heart sm:text-[1.25rem]">
+            <p className="mx-auto mt-4 max-w-2xl font-display text-[1.2rem] font-extrabold leading-snug tracking-tight text-heart sm:text-[1.4rem]">
               {homeHero.sub}
             </p>
             <p className="mx-auto mt-5 max-w-xl text-[1.08rem] leading-relaxed text-ink-soft">
@@ -84,7 +85,7 @@ export function HomePage() {
           }}
         >
           <div className="mx-auto w-full max-w-6xl">
-            <h2 className="text-center font-display text-[2rem] font-semibold leading-[1.1] text-ink sm:text-[2.35rem]">
+            <h2 className="text-center font-display text-[1.95rem] font-extrabold leading-[1.12] tracking-tight text-ink sm:text-[2.45rem]">
               Our Process
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-center text-[1.05rem] leading-relaxed text-ink-soft">
@@ -113,7 +114,7 @@ export function HomePage() {
                       <span className="mx-auto mt-5 grid size-12 place-items-center rounded-full bg-sand text-heart transition-transform duration-200 group-hover:scale-110">
                         <Icon className="size-5" strokeWidth={1.75} />
                       </span>
-                      <h3 className="mt-4 font-display text-[1.05rem] font-semibold">
+                      <h3 className="mt-4 font-display text-[1.05rem] font-extrabold tracking-tight">
                         {step.title}
                       </h3>
                       <p className="mt-2 text-sm leading-relaxed text-ink-soft">
@@ -160,7 +161,7 @@ export function HomePage() {
                 <div className="flex flex-col items-center gap-2">
                   <RenderedIcon name={tier.icon} delay={(i % 4) as 0 | 1 | 2 | 3} />
                   <Badge variant="live">Live</Badge>
-                  <h3 className="font-display text-2xl font-semibold">
+                  <h3 className="font-display text-2xl font-extrabold tracking-tight">
                     {tier.name}
                   </h3>
                 </div>
@@ -217,10 +218,10 @@ export function HomePage() {
                   />
                 </div>
                 <div className="text-center">
-                  <p className="font-display text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-muted">
+                  <p className="font-display text-[0.78rem] font-bold uppercase tracking-[0.22em] text-bobby">
                     Studio sidekick
                   </p>
-                  <h2 className="mt-3 font-display text-[1.85rem] font-semibold leading-[1.12] text-ink sm:text-[2.2rem]">
+                  <h2 className="mt-3 font-display text-[1.95rem] font-extrabold leading-[1.12] tracking-tight text-ink sm:text-[2.45rem]">
                     Meet Builder Bot Bobby
                   </h2>
                   <p className="mx-auto mt-4 max-w-2xl text-[1.05rem] leading-relaxed text-ink-soft">
@@ -328,7 +329,7 @@ export function HomePage() {
                 <Badge variant="paper" className="w-fit">
                   {item.category}
                 </Badge>
-                <h3 className="mt-3 text-center font-display text-xl font-semibold">
+                <h3 className="mt-3 text-center font-display text-xl font-extrabold tracking-tight">
                   {item.title}
                 </h3>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-soft">
@@ -369,10 +370,10 @@ export function HomePage() {
                   className="h-[92%] w-[92%] object-contain"
                 />
               </div>
-              <p className="mt-8 font-display text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-muted">
+              <p className="mt-8 font-display text-[0.78rem] font-bold uppercase tracking-[0.22em] text-bobby">
                 Next step
               </p>
-              <h2 className="mt-3 font-display text-[2rem] font-semibold leading-[1.1] text-ink sm:text-[2.6rem]">
+              <h2 className="mt-3 font-display text-[1.95rem] font-extrabold leading-[1.12] tracking-tight text-ink sm:text-[2.45rem]">
                 Build Your Brief
               </h2>
               <Link

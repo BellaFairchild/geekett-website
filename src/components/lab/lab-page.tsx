@@ -30,7 +30,7 @@ export function LabPage() {
       <main>
         <Section>
           <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-            <div>
+            <div className="text-center">
               <Eyebrow>App Lab</Eyebrow>
               <SectionTitle>Ideas Cooking In The Geekett Lab</SectionTitle>
               <SectionIntro>
@@ -75,7 +75,7 @@ export function LabPage() {
                 className="flex flex-col rounded-xl border border-line bg-cream p-5"
               >
                 <div className="flex items-start justify-between gap-2">
-                  <h2 className="font-display text-lg font-semibold">
+                  <h2 className="font-display text-lg font-extrabold tracking-tight">
                     {project.name}
                   </h2>
                   <Badge

@@ -22,7 +22,7 @@ export function AboutPage() {
       <main>
         <Section>
           <div className="grid items-center gap-10 lg:grid-cols-2">
-            <div>
+            <div className="text-center lg:text-center">
               <Eyebrow>About</Eyebrow>
               <SectionTitle>One Woman. One Builder Bot. Not A Foosball Table.</SectionTitle>
               <SectionIntro>
@@ -31,13 +31,13 @@ export function AboutPage() {
                 Systems for independent founders — with Builder Bot Bobby keeping
                 the checklists tidy (and the scope out of a side quest).
               </SectionIntro>
-              <p className="mt-5 max-w-xl text-[1.05rem] leading-relaxed text-ink-soft">
+              <p className="mx-auto mt-5 max-w-xl text-center text-[1.05rem] leading-relaxed text-ink-soft">
                 The work is async on purpose. You write a brief. Bella replies
                 within a business day. Shared docs and short screen recordings
                 replace a meeting marathon. If your favorite vendor’s love
                 language is “circling back,” we are not that vendor. {TAGLINE}
               </p>
-              <div className="mt-7 flex flex-wrap gap-3">
+              <div className="mt-7 flex flex-wrap justify-center gap-3">
                 <Button asChild>
                   <Link to="/project-brief">Start a brief</Link>
                 </Button>
@@ -62,7 +62,7 @@ export function AboutPage() {
                 <span className="grid size-9 place-items-center rounded-full bg-ink font-display text-sm font-semibold text-cream">
                   {beat.n}
                 </span>
-                <h3 className="mt-4 font-display text-lg font-semibold">
+                <h3 className="mt-4 text-center font-display text-lg font-extrabold tracking-tight">
                   {beat.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink-soft">
@@ -70,31 +70,6 @@ export function AboutPage() {
                 </p>
               </div>
             ))}
-          </div>
-        </Section>
-
-        <Section>
-          <div className="grid items-end gap-8 sm:grid-cols-2">
-            <figure className="flex flex-col items-center rounded-xl border border-line bg-cream px-4 pt-6">
-              <img
-                src="/characters/geekett-full.webp"
-                alt="Geekett character"
-                className="h-[300px] w-auto object-contain object-bottom"
-              />
-              <figcaption className="py-3 text-sm text-muted">
-                Geekett — studio character
-              </figcaption>
-            </figure>
-            <figure className="flex flex-col items-center rounded-xl border border-line bg-cream px-4 pt-6">
-              <img
-                src="/characters/bobby.webp"
-                alt="Builder Bot Bobby"
-                className="h-[280px] w-auto object-contain object-bottom"
-              />
-              <figcaption className="py-3 text-sm text-muted">
-                Builder Bot Bobby
-              </figcaption>
-            </figure>
           </div>
         </Section>
 
@@ -112,7 +87,7 @@ export function AboutPage() {
                     aria-expanded={isOpen}
                     onClick={() => setOpenFaq(isOpen ? null : i)}
                   >
-                    <span className="font-display text-[0.98rem] font-semibold">
+                    <span className="font-display text-[0.98rem] font-extrabold tracking-tight">
                       {item.q}
                     </span>
                     <span

@@ -107,10 +107,6 @@
     }
   }
 
-  .gk-build-list {
-    background: linear-gradient(135deg, #12c4bb 0%, var(--color-bobby) 42%, #3ecde0 100%);
-  }
-
   .icon-3d {
     display: inline-grid;
     place-items: center;

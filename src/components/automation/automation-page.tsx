@@ -25,19 +25,20 @@ export function AutomationPage() {
       <main>
         <section className="px-5 pb-14 pt-10 sm:px-8 sm:pt-14">
           <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
-            <div>
-              <p className="mb-4 font-display text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-bobby">
+            <div className="text-center lg:text-center">
+              <p className="mb-4 font-display text-[0.78rem] font-bold uppercase tracking-[0.22em] text-bobby">
                 AI Automation Systems · From $1,800 CAD
               </p>
-              <h1 className="text-[2.15rem] font-semibold leading-[1.08] sm:text-[3.05rem]">
-                Automation Strategies That Steal Hours — Not Your Voice.
+              <h1 className="text-[2.35rem] font-extrabold leading-[1.05] tracking-tight sm:text-[3.35rem]">
+                Automation Strategies That Steal Hours —{" "}
+                <span className="text-heart">Not Your Voice.</span>
               </h1>
-              <p className="mt-5 max-w-xl text-[1.08rem] leading-relaxed text-ink-soft">
+              <p className="mx-auto mt-5 max-w-xl text-[1.08rem] leading-relaxed text-ink-soft">
                 Six plays independent businesses actually run. No 40-tool circus.
                 No “AI transformation” fog. Bobby maps the busywork. Bella keeps
                 it human. You keep sounding like you — just faster.
               </p>
-              <div className="mt-7 flex flex-wrap gap-3">
+              <div className="mt-7 flex flex-wrap justify-center gap-3">
                 <Button size="lg" asChild>
                   <a href={blueprintMail}>Get Free Blueprint</a>
                 </Button>
@@ -71,14 +72,14 @@ export function AutomationPage() {
                 className="hover-lift flex flex-col rounded-2xl border border-line bg-cream p-6"
               >
                 <div className="flex items-start justify-between gap-3">
-                  <p className="font-display text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-muted">
+                  <p className="font-display text-[0.78rem] font-bold uppercase tracking-[0.22em] text-bobby">
                     {play.n}
                   </p>
                   <span className="rounded-full bg-bobby-mist px-2.5 py-0.5 text-[0.68rem] font-semibold uppercase tracking-wide text-bobby-deep">
                     {play.win}
                   </span>
                 </div>
-                <h2 className="mt-3 font-display text-xl font-semibold leading-snug">
+                <h2 className="mt-3 font-display text-xl font-extrabold leading-snug tracking-tight">
                   {play.title}
                 </h2>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">
@@ -117,7 +118,7 @@ export function AutomationPage() {
                 <span className="grid size-9 place-items-center rounded-full bg-ink font-display text-sm font-semibold text-cream">
                   {beat.n}
                 </span>
-                <h3 className="mt-4 font-display text-lg font-semibold">{beat.title}</h3>
+                <h3 className="mt-4 font-display text-lg font-extrabold tracking-tight">{beat.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink-soft">{beat.body}</p>
               </article>
             ))}
@@ -130,10 +131,10 @@ export function AutomationPage() {
 
         <Section id="blueprint">
           <div className="rounded-[2rem] border border-[#f3d7e4] bg-cream px-6 py-12 text-center sm:px-12 sm:py-14">
-            <p className="font-display text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-muted">
+            <p className="font-display text-[0.78rem] font-bold uppercase tracking-[0.22em] text-bobby">
               Next step
             </p>
-            <h2 className="mt-3 font-display text-[1.85rem] font-semibold leading-[1.12] sm:text-[2.2rem]">
+            <h2 className="mt-3 font-display text-[1.95rem] font-extrabold leading-[1.12] tracking-tight sm:text-[2.45rem]">
               Request Your Automation Blueprint
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-[1.05rem] leading-relaxed text-ink-soft">
