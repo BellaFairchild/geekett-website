@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import {
   ArrowRight,
@@ -10,7 +11,7 @@ import {
 import { SiteFooter } from "@/components/chrome/site-footer";
 import { SiteHeader } from "@/components/chrome/site-header";
 import { WorkingTogether } from "@/components/chrome/working-together";
-import { BrandTagline } from "@/components/brand";
+import { BrandTagline, Type3D } from "@/components/brand";
 import { RenderedIcon } from "@/components/icons/rendered-icon";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -22,6 +23,7 @@ import {
 } from "@/components/section";
 import {
   appTiers,
+  faqs,
   fitChips,
   homeHero,
   shopItems,
@@ -29,18 +31,26 @@ import {
   wpProcess,
   wpTiers,
 } from "@/lib/geekett/content";
+import { cn } from "@/lib/utils";
 
 export function HomePage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
   return (
     <div className="min-h-screen overflow-x-clip bg-paper text-ink">
       <SiteHeader current="/" />
       <main>
-        <section className="px-5 pb-16 pt-10 sm:px-8 sm:pt-14 lg:pt-16">
+        <section className="bg-[#d4ece8] px-5 pb-16 pt-10 sm:px-8 sm:pt-14 lg:pt-16">
           <div className="mx-auto max-w-6xl text-center">
             <p className="mb-5 font-display text-[0.78rem] font-bold uppercase tracking-[0.22em] text-bobby">
               {homeHero.kicker}
             </p>
-            <BrandTagline className="text-[1.85rem] sm:text-[2.4rem] lg:text-[2.65rem]" />
+            <Type3D
+              className="text-[2.6rem] sm:text-[3.6rem] lg:text-[4.2rem]"
+              lit
+            >
+              Geekett
+            </Type3D>
+            <BrandTagline className="mt-5 text-[1.85rem] sm:text-[2.4rem] lg:text-[2.65rem]" />
             <WorkingTogether className="mx-auto mt-8 max-w-[680px]" />
           </div>
         </section>
@@ -335,6 +345,45 @@ export function HomePage() {
             <Button asChild>
               <Link to="/shop">Browse the shop</Link>
             </Button>
+          </div>
+        </Section>
+
+        <Section id="faq" alt>
+          <div className="mx-auto max-w-3xl">
+            <Eyebrow>FAQ</Eyebrow>
+            <SectionTitle>Questions, Answered Clearly</SectionTitle>
+            <div className="mt-8 divide-y divide-line overflow-hidden rounded-xl border border-line bg-cream">
+              {faqs.map((item, i) => {
+                const isOpen = openFaq === i;
+                return (
+                  <div key={item.q}>
+                    <button
+                      type="button"
+                      className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+                      aria-expanded={isOpen}
+                      onClick={() => setOpenFaq(isOpen ? null : i)}
+                    >
+                      <span className="font-display text-[0.98rem] font-extrabold tracking-tight">
+                        {item.q}
+                      </span>
+                      <span
+                        className={cn(
+                          "grid size-8 shrink-0 place-items-center rounded-full border border-line text-sm",
+                          isOpen ? "bg-ink text-cream" : "bg-paper text-ink",
+                        )}
+                      >
+                        {isOpen ? "–" : "+"}
+                      </span>
+                    </button>
+                    {isOpen ? (
+                      <p className="px-5 pb-5 text-sm leading-relaxed text-ink-soft">
+                        {item.a}
+                      </p>
+                    ) : null}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </Section>
 

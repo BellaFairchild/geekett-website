@@ -146,7 +146,7 @@ export const mvpBlueprint = {
 
 export const whyGeekett = {
   eyebrow: "Why Geekett",
-  title: "One Woman. One Builder Bot. Not A Foosball Table.",
+  title: "One Woman. One Builder Bot. Real Results.",
   body: "Bella does the strategy, design, and human judgment. Bobby keeps the checklists tidy, the updates rolling, and the scope from wandering into a side quest. We work by message and shared docs. If your favorite vendor’s love language is “circling back,” we are not that vendor.",
   pills: ["Smart apps", "Bright ideas", "Built with heart", "Slightly allergic to boring"],
 } as const;

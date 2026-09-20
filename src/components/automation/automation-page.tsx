@@ -59,7 +59,7 @@ export function AutomationPage() {
 
         <Section id="plays" alt>
           <Eyebrow>The Plays</Eyebrow>
-          <SectionTitle>Six Strategies. Pick The Leak, Not The Catalogue.</SectionTitle>
+          <SectionTitle>Six Strategies. Pick The One That Pays.</SectionTitle>
           <SectionIntro>
             Most owners don’t need “AI.” They need follow-ups that go out, content
             that doesn’t eat Sunday, and onboarding that isn’t rewritten from
@@ -95,7 +95,7 @@ export function AutomationPage() {
 
         <Section id="rules">
           <Eyebrow>Bobby’s House Rules</Eyebrow>
-          <SectionTitle>We Automate Chores. We Do Not Clone You.</SectionTitle>
+          <SectionTitle>We Automate Chores. You Keep Your Voice.</SectionTitle>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2">
             {automationRules.map((rule) => (
               <li
@@ -111,7 +111,7 @@ export function AutomationPage() {
 
         <Section id="how" alt>
           <Eyebrow>How It Works</Eyebrow>
-          <SectionTitle>A Written Process. Then A System You Can Run Tired.</SectionTitle>
+          <SectionTitle>A Written Process. Then A System You Can Run.</SectionTitle>
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {automationBeats.map((beat) => (
               <article key={beat.n} className="rounded-xl border border-line bg-cream p-5">

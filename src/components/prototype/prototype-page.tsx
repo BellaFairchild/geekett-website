@@ -115,7 +115,7 @@ export function PrototypePage() {
       <SiteHeader current="/geekettapp" />
 
       <main>
-        <section className="px-5 pb-16 pt-10 sm:px-8 sm:pt-14 lg:pt-16">
+        <section className="bg-[#d4ece8] px-5 pb-16 pt-10 sm:px-8 sm:pt-14 lg:pt-16">
           <div className="mx-auto max-w-6xl text-center">
             <p className="mb-4 font-display text-[0.78rem] font-bold uppercase tracking-[0.22em] text-bobby">
               One-woman studio · Powered with Builder Bot Bobby
@@ -142,12 +142,12 @@ export function PrototypePage() {
             </div>
             <div>
               <p className="mx-auto mt-4 max-w-2xl font-display text-[1.2rem] font-extrabold leading-snug tracking-tight text-heart sm:text-[1.4rem]">
-                Let’s Give It A Plan, A System, And A Sidekick That Actually Ship.
+                Let’s Give It A Plan, A System, And A Sidekick That Actually Ships.
               </p>
               <p className="mx-auto mt-5 max-w-xl text-[1.08rem] leading-relaxed text-ink-soft">
                 Geekett is Bella’s App Studio — App Consulting and AI
                 Automation Systems. Clear packages. Real deliverables. No jargon
-                fog. No foosball table.
+                fog.
               </p>
               <div className="mt-7 flex flex-wrap justify-center gap-3">
                 <Button size="lg" asChild>
@@ -488,7 +488,7 @@ export function PrototypePage() {
         <Section id="love">
           <Eyebrow>Studio Proof</Eyebrow>
           <SectionTitle>
-            Show The Work. Don’t Invent The Love.
+            Show The Work. Skip The Fake Quotes.
           </SectionTitle>
           <SectionIntro className="mx-auto text-center">
             The reference mock used placeholder quotes. This plan replaces a
